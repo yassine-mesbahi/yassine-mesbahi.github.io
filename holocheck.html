@@ -2,17 +2,101 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet HoloCheck - Yassine Mesbahi</title>
     <style>
-        body { font-family: sans-serif; padding: 50px; line-height: 1.6; max-width: 800px; margin: auto; }
-        .back-button { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #3b82f6; font-weight: bold; }
-        h1 { color: #1e3a8a; }
-        img { width: 100%; border-radius: 10px; margin: 20px 0; }
+        body { font-family: 'Segoe UI', sans-serif; padding: 40px 20px; line-height: 1.6; max-width: 900px; margin: auto; color: #333; background-color: #f4f7f6; }
+        .back-button { display: inline-block; margin-bottom: 30px; text-decoration: none; color: #3b82f6; font-weight: bold; border: 1px solid #3b82f6; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        .back-button:hover { background: #3b82f6; color: white; }
+        h1 { color: #1e3a8a; border-bottom: 4px solid #3b82f6; padding-bottom: 10px; font-size: 2.2em; }
+        h2 { color: #1e3a8a; margin-top: 40px; background: #eef2ff; padding: 10px; border-radius: 5px; }
+        .tech-stack { margin: 25px 0; display: flex; flex-wrap: wrap; gap: 10px; }
+        .tech-tag { background: #1e3a8a; color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 600; }
+        .project-image { width: 100%; border-radius: 12px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .image-caption { text-align: center; font-size: 0.9em; color: #666; margin-top: -15px; margin-bottom: 25px; font-style: italic; }
+        .highlight { color: #1e3a8a; font-weight: bold; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .feature-item { background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ccc; font-style: italic; color: #666; }
     </style>
 </head>
 <body>
     <a href="index.html" class="back-button">← Retour au portfolio</a>
-    <h1>Projet HoloCheck - Réalité Mixte</h1>
-    <p>Ici, tu vas pouvoir raconter en détail ton expérience avec l'HoloLens 2 et l'Unreal Engine 5.</p>
-    </body>
+    
+    <h1>HoloCheck : Checklist d'Hélicoptère en Réalité Mixte</h1>
+    
+    <div class="tech-stack">
+        <span class="tech-tag">Unreal Engine 5</span>
+        <span class="tech-tag">HoloLens 2</span>
+        <span class="tech-tag">MRTK</span>
+        <span class="tech-tag">Blueprints</span>
+        <span class="tech-tag">Aéronautique</span>
+    </div>
+
+    <p>
+        <strong>HoloCheck</strong> est une application de réalité augmentée sur <span class="highlight">HoloLens 2</span> destinée aux pilotes de l'hélicoptère <span class="highlight">Guimbal Cabri G2</span>[cite: 5, 18]. 
+        Ce système dématérialise les checklists de vol en une interface interactive, permettant de valider les procédures de sécurité directement dans le cockpit[cite: 19, 25].
+    </p>
+
+    <img src="hololens_device.png" alt="Casque HoloLens 2" class="project-image">
+    <div class="image-caption">Casque Microsoft HoloLens 2 : Matériel de réalité mixte autonome utilisé pour le projet[cite: 68].</div>
+
+    <h2>1. Analyse du besoin et problématique</h2>
+    <p>
+        Dans un cockpit exigu, l'utilisation d'un support papier traditionnel pose un défi ergonomique et contraint l'apprenti pilote à détourner le regard de son environnement[cite: 33, 34]. 
+        L'objectif d'HoloCheck est de supprimer ces ruptures d'attention en affichant les informations directement dans le champ de vision du pilote[cite: 54, 55].
+    </p>
+
+    <img src="exel.png" alt="Analyse de la checklist" class="project-image">
+    <div class="image-caption">Transformation de la documentation passive en assistance active via une segmentation rigoureuse[cite: 210, 214].</div>
+
+    <h2>2. Stratégie UI/UX et Interactions</h2>
+    <p>
+        L'interface a été spécifiquement pensée pour s'adapter à la cabine du Cabri G2 (1,24 m de large) sans obstruer les instruments réels[cite: 240, 241].
+    </p>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <strong>🖐️ Suivi des mains :</strong> Interaction naturelle via le <span class="highlight">Hand Tracking</span> pour manipuler les hologrammes[cite: 74, 184].
+        </div>
+        <div class="feature-item">
+            <strong>🎤 Commandes vocales :</strong> Validation des étapes sans lâcher les commandes de vol (cyclique et collectif)[cite: 20, 243].
+        </div>
+        <div class="feature-item">
+            <strong>🌍 Spatial Mapping :</strong> Ancrage stable des éléments virtuels dans la géométrie réelle du cockpit[cite: 73, 97].
+        </div>
+        <div class="feature-item">
+            <strong>📈 Barres de progression :</strong> Visualisation immédiate de l'avancement global des procédures[cite: 246, 290].
+        </div>
+    </div>
+
+    <img src="ui_design.png" alt="Conception ergonomique" class="project-image">
+    <div class="image-caption">Évolution de la disposition des éléments pour maximiser le confort visuel et la sécurité[cite: 242, 260].</div>
+
+    <h2>3. Développement sous Unreal Engine 5</h2>
+    <p>
+        Le projet s'appuie sur le système de <span class="highlight">Blueprints</span> (scripting visuel), permettant de construire des algorithmes complexes de manière intuitive[cite: 87, 88].
+    </p>
+    
+    <img src="blueprint_logic.png" alt="Logique de programmation Blueprint" class="project-image">
+    <div class="image-caption">Implémentation de la logique séquentielle pour la gestion des étapes et de l'UI[cite: 264, 270].</div>
+
+    <p>
+        La programmation événementielle, pilotée par le nœud <strong>Event Tick</strong>, assure une surveillance en temps réel des interactions de l'élève[cite: 271]. 
+        Des sécurités mathématiques (nœud <span class="highlight">Clamp</span>) garantissent que les barres de progression ne sortent jamais de leurs limites visuelles[cite: 281, 282].
+    </p>
+
+    <h2>4. Validation sur simulateur</h2>
+    <p>
+        La validation finale a été réalisée sur le simulateur de l'IUT de Cachan[cite: 297]. 
+        Grâce au <strong>Holographic Remoting</strong>, les hologrammes ont été ajustés en direct pour garantir qu'ils ne masquent aucun instrument de bord réel[cite: 299, 302].
+    </p>
+
+    <img src="simulateur.jpg" alt="Tests sur simulateur" class="project-image">
+    <div class="image-caption">Mise en situation réelle pour valider l'ergonomie et l'ancrage spatial du système[cite: 303, 309].</div>
+
+    <div class="footer">
+        Projet SAE BUT 3 GEII - Réalisé par Yassine Mesbahi et Mamadou-cellou Diallo (2025)[cite: 7].
+    </div>
+</body>
 </html>
