@@ -30,57 +30,66 @@
         <span class="tech-tag">HoloLens 2</span>
         <span class="tech-tag">MRTK</span>
         <span class="tech-tag">Blueprints</span>
-        <span class="tech-tag">C++ / UX</span>
+        <span class="tech-tag">UX/UI Design</span>
     </div>
 
     <p>
-        <strong>HoloCheck</strong> est une solution de Réalité Mixte (RM) dématérialisant la checklist de vol du <span class="highlight">Guimbal Cabri G2</span>[cite: 18]. 
-        L'application permet aux apprentis pilotes de valider 35 étapes de sécurité critiques tout en gardant les mains sur les commandes[cite: 20, 243].
+        <strong>HoloCheck</strong> est une application de réalité mixte développée pour les pilotes de l'hélicoptère <strong>Guimbal Cabri G2</strong>. 
+        Le système dématérialise les checklists de vol via une interface interactive ancrée dans le champ de vision du pilote, améliorant ainsi la sécurité et l'ergonomie en cockpit.
     </p>
 
     <video class="project-media" controls autoplay muted loop>
         <source src="demo.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la lecture de vidéos.
     </video>
-    <div class="image-caption">Démonstration de l'interface : navigation interactive et mise à jour dynamique des procédures de vol.</div>
+    <div class="image-caption">Démonstration de l'interface : navigation interactive et mise à jour dynamique des procédures.</div>
 
-    <h2>1. Analyse et Conception</h2>
+    <h2>1. Analyse du besoin et Problématique</h2>
     <p>
-        Le projet transforme une documentation papier passive en une assistance active[cite: 210]. 
-        Nous avons segmenté la checklist (Phase : Avant de démarrer le moteur) pour garantir une navigation séquentielle fluide[cite: 214].
+        Dans un cockpit exigu (1,24 m de large), l'utilisation d'une checklist papier contraint le pilote à détourner le regard de l'environnement extérieur. 
+        HoloCheck supprime ces ruptures d'attention en projetant les informations essentielles directement sur le visuel du pilote.
     </p>
 
-    <img src="exel.png" alt="Analyse Excel" class="project-media">
-    <div class="image-caption">Structure des données : de la documentation constructeur à la logique logicielle.</div>
+    <img src="cabri_g2.jpg" alt="Hélicoptère Guimbal Cabri G2" class="project-media">
+    <div class="image-caption">L'hélicoptère de référence : Guimbal Cabri G2.</div>
 
-    <h2>2. Développement Technique (Blueprints)</h2>
+    <img src="exel.png" alt="Analyse de la checklist" class="project-media">
+    <div class="image-caption">Transformation de la documentation constructeur en une structure de données active.</div>
+
+    <h2>2. Conception Ergonomique</h2>
     <p>
-        Développé sous <span class="highlight">Unreal Engine 5.3</span>[cite: 144]. 
-        La logique repose sur le <strong>Hand Tracking</strong> (geste de pincement / pinch) pour interagir avec les boutons virtuels sans contact physique[cite: 201, 203].
+        L'organisation visuelle a été pensée pour ne pas obstruer les instruments réels. Le design a évolué pour réduire la charge cognitive du pilote.
     </p>
-    
     <div class="feature-grid">
         <div class="feature-item">
-            <strong>🚀 Performance :</strong> Utilisation d'une <strong>Sequence</strong> pour traiter les calculs UI sans ralentir le tracking[cite: 272].
+            <strong>🖐️ Hand Tracking :</strong> Interaction naturelle par pincement de doigts pour valider les étapes.
         </div>
         <div class="feature-item">
-            <strong>🛡️ Sécurité :</strong> Nœuds <strong>Clamp</strong> pour verrouiller les barres de progression entre 0% et 100%[cite: 282].
+            <strong>📊 Progression :</strong> Double barre de progression pour situer l'avancement global en un clin d'œil.
         </div>
     </div>
 
-    <img src="blueprint_logic.png" alt="Logique Blueprint" class="project-media">
-    <div class="image-caption">Algorithme de gestion du flux : incrémentation des étapes et mise à jour des widgets texte.</div>
+    <img src="ui_design.png" alt="Design UI/UX" class="project-media">
+    <div class="image-caption">Optimisation de l'interface pour une meilleure visibilité en conditions de vol.</div>
 
-    <h2>3. Validation sur Simulateur</h2>
+    <h2>3. Développement sous Unreal Engine 5</h2>
     <p>
-        Le placement des hologrammes a été ajusté en direct sur simulateur via <strong>Holographic Remoting</strong> pour s'assurer qu'aucune information vitale du cockpit réel ne soit masquée[cite: 299, 302].
+        La logique logicielle utilise le système de <strong>Blueprints</strong>. Le flux de données est surveillé en temps réel pour garantir une réactivité parfaite de l'interface holographique.
+    </p>
+    
+    <img src="blueprint_logic.png" alt="Logique Blueprint" class="project-media">
+    <div class="image-caption">Architecture logicielle gérant la validation séquentielle des 35 étapes de sécurité.</div>
+
+    <h2>4. Validation sur Simulateur</h2>
+    <p>
+        Les tests finaux sur le simulateur de l'IUT de Cachan ont permis d'ajuster l'ancrage spatial des hologrammes et de valider l'ergonomie générale du système.
     </p>
 
-    <img src="simulateur.jpg" alt="Test Simulateur" class="project-media">
-    <div class="image-caption">Test ergonomique final : alignement parfait entre le réel et le virtuel.</div>
+    <img src="simulateur.jpg" alt="Tests en simulateur" class="project-media">
+    <div class="image-caption">Mise en situation réelle pour valider l'assistance tête haute.</div>
 
     <div class="footer">
-        Projet réalisé par Yassine Mesbahi et Mamadou-cellou Diallo - IUT de Cachan (2025).
+        Projet réalisé par Yassine Mesbahi et Mamadou-cellou Diallo - BUT GEII (2025).
     </div>
 </body>
 </html>
