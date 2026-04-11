@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yassine Mesbahi - Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
         .container { max-width: 1000px; margin: 0 auto; }
+        
+        /* Header & Contact */
         .header { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; border-radius: 12px; margin-bottom: 30px; }
         h1 { margin: 0; font-size: 2.5em; }
         .contact-links { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .contact-links a { background: white; color: #1e3a8a; padding: 8px 15px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.9em; }
+        .contact-links a { background: white; color: #1e3a8a; padding: 8px 15px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: 0.3s; }
+        .contact-links a:hover { transform: scale(1.05); }
         .cv-button { background: #ffd700 !important; color: #1e3a8a !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; border: 2px solid #1e3a8a; }
+
+        /* Sections */
         .section-title { font-size: 1.8em; color: #1e3a8a; border-bottom: 3px solid #3b82f6; display: inline-block; margin: 40px 0 20px 0; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; transition: 0.3s; height: 100%; box-sizing: border-box; }
-        .card:hover { transform: translateY(-5px); cursor: pointer; border-top-color: #ffd700; }
-        .school-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .school-logo { width: 40px; height: auto; }
+        
+        /* Cards */
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; transition: 0.3s; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-top-color: #ffd700; }
+        .clickable { cursor: pointer; }
+        
+        .school-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .school-logo { width: 45px; height: auto; border-radius: 4px; }
+        
+        .card h3 { margin: 0; color: #1e3a8a; font-size: 1.2em; }
         .date { color: #65676b; font-weight: bold; font-size: 0.85em; display: block; margin-bottom: 10px; }
-        .tag { background: #eef2ff; color: #4338ca; padding: 3px 10px; border-radius: 15px; font-size: 0.75em; font-weight: bold; margin-right: 5px; }
+        
+        /* Tags */
+        .tag-container { margin-top: auto; padding-top: 15px; }
+        .tag { background: #eef2ff; color: #4338ca; padding: 4px 10px; border-radius: 15px; font-size: 0.75em; font-weight: bold; margin-right: 5px; margin-bottom: 5px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -33,22 +47,67 @@
             <a href="mailto:yassinemesbahi7@gmail.com">📧 yassinemesbahi7@gmail.com</a>
             <a href="tel:+33695518992">📞 06 95 51 89 92</a>
         </div>
-        <a href="CV_Yassine_Mesbahi.pdf" class="cv-button">📄 MON CV (PDF)</a>
+        <a href="CV_Yassine_Mesbahi.pdf" class="cv-button" target="_blank">📄 TÉLÉCHARGER MON CV (PDF)</a>
     </div>
 
     <h2 class="section-title">Ma Formation</h2>
     <div class="grid">
         <div class="card">
             <div class="school-header">
-                <img src="ensea.png" alt="" class="school-logo">
+                <img src="ensea.png" alt="Logo ENSEA" class="school-logo">
                 <h3>Cycle Ingénieur (Apprentissage)</h3>
             </div>
             <span class="date">ENSEA Cergy | 2026 - 2029 (prochainement)</span>
-            <p>Systèmes embarqués et informatique industrielle.</p>
+            <p>Spécialisation en systèmes embarqués et informatique industrielle.</p>
         </div>
         <div class="card">
             <div class="school-header">
-                <img src="cachan.png" alt="" class="school-logo">
+                <img src="cachan.png" alt="Logo Cachan" class="school-logo">
                 <h3>BUT GEII - Robotique</h3>
             </div>
             <span class="date">IUT de Cachan | 2023 - 2026</span>
+            <p>Focus robotique, automatisme et électronique de puissance.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">Expériences Professionnelles</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Stage Assistant Ingénieur - SECRE</h3>
+            <span class="date">Février 2026 - En cours</span>
+            <p>Optimisation de production d'induits électriques et maintenance préventive.</p>
+            <div class="tag-container"><span class="tag">Production</span><span class="tag">Tests</span></div>
+        </div>
+        <div class="card">
+            <h3>Stage Robotique - Igus France</h3>
+            <span class="date">Juin 2025 - Juillet 2025</span>
+            <p>Intégration de bras robotiques et programmation de caméras de vision.</p>
+            <div class="tag-container"><span class="tag">Robotique</span><span class="tag">Vision 2D</span></div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Projets Majeurs (Cliquer pour voir)</h2>
+    <div class="grid">
+        <div class="card clickable" onclick="location.href='holocheck.html';">
+            <h3>HoloCheck (Réalité Mixte)</h3>
+            <span class="date">2025</span>
+            <p>Checklists aéronautiques sur HoloLens 2 développées sous Unreal Engine 5.</p>
+            <div class="tag-container"><span class="tag">UE5</span><span class="tag">HoloLens</span></div>
+        </div>
+        <div class="card clickable" onclick="location.href='covapsy.html';">
+            <h3>COVAPSY (Voiture Autonome)</h3>
+            <span class="date">2024 - 2025</span>
+            <p>Navigation LiDAR et Bus CAN. 🏆 2ème place au concours national GEII.</p>
+            <div class="tag-container"><span class="tag">C++</span><span class="tag">LiDAR</span><span class="tag">STM32</span></div>
+        </div>
+        <div class="card clickable" onclick="location.href='gamel-trophy.html';">
+            <h3>Gamel Trophy (Robot Suiveur)</h3>
+            <span class="date">2023 - 2024</span>
+            <p>Conception complète de A à Z : Routage PCB, CMS et programmation.</p>
+            <div class="tag-container"><span class="tag">KiCad</span><span class="tag">C++</span></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
