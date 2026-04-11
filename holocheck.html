@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet HoloCheck - Yassine Mesbahi</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; padding: 40px 20px; line-height: 1.6; max-width: 900px; margin: auto; color: #333; background-color: #f4f7f6; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; padding: 40px 20px; line-height: 1.6; max-width: 900px; margin: auto; color: #333; background-color: #f4f7f6; }
         .back-button { display: inline-block; margin-bottom: 30px; text-decoration: none; color: #3b82f6; font-weight: bold; border: 1px solid #3b82f6; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
         .back-button:hover { background: #3b82f6; color: white; }
         h1 { color: #1e3a8a; border-bottom: 4px solid #3b82f6; padding-bottom: 10px; font-size: 2.2em; }
@@ -29,74 +29,61 @@
         <span class="tech-tag">Unreal Engine 5</span>
         <span class="tech-tag">HoloLens 2</span>
         <span class="tech-tag">MRTK</span>
-        <span class="tech-tag">Blueprints</span>
         <span class="tech-tag">Aéronautique</span>
     </div>
 
     <p>
-        <strong>HoloCheck</strong> est une application de réalité augmentée sur <span class="highlight">HoloLens 2</span> destinée aux pilotes de l'hélicoptère <span class="highlight">Guimbal Cabri G2</span>[cite: 5, 18]. 
-        Ce système dématérialise les checklists de vol en une interface interactive, permettant de valider les procédures de sécurité directement dans le cockpit[cite: 19, 25].
+        <strong>HoloCheck</strong> est une solution innovante de Réalité Mixte conçue pour sécuriser la formation des pilotes sur l'hélicoptère <span class="highlight">Guimbal Cabri G2</span>. 
+        En exploitant la puissance du moteur <span class="highlight">Unreal Engine 5</span> et du casque <span class="highlight">HoloLens 2</span>, nous proposons d'intégrer les procédures vitales directement dans le champ de vision du pilote[cite: 37, 84].
     </p>
 
-    <img src="hololens_device.png" alt="Casque HoloLens 2" class="project-image">
-    <div class="image-caption">Casque Microsoft HoloLens 2 : Matériel de réalité mixte autonome utilisé pour le projet[cite: 68].</div>
+    <img src="cabri_g2.jpg" alt="Hélicoptère Guimbal Cabri G2" class="project-image">
+    <div class="image-caption">L'appareil de référence : Guimbal Cabri G2, un hélicoptère biplace plébiscité pour l'apprentissage.</div>
 
-    <h2>1. Analyse du besoin et problématique</h2>
+    <h2>1. La Problématique : L'Ergonomie en Cockpit Exigu</h2>
     <p>
-        Dans un cockpit exigu, l'utilisation d'un support papier traditionnel pose un défi ergonomique et contraint l'apprenti pilote à détourner le regard de son environnement[cite: 33, 34]. 
-        L'objectif d'HoloCheck est de supprimer ces ruptures d'attention en affichant les informations directement dans le champ de vision du pilote[cite: 54, 55].
+        Dans un habitacle ne mesurant que 1,24 m de large, l'utilisation d'une checklist papier traditionnelle force l'apprenti pilote à détourner le regard de son environnement extérieur et à lâcher ponctuellement les commandes[cite: 33, 34, 416]. 
+        Cette rupture d'attention peut s'avérer dangereuse lors des phases critiques du vol.
     </p>
 
     <img src="exel.png" alt="Analyse de la checklist" class="project-image">
-    <div class="image-caption">Transformation de la documentation passive en assistance active via une segmentation rigoureuse[cite: 210, 214].</div>
+    <div class="image-caption">Segmentation de la documentation papier en une assistance active et simplifiée.</div>
 
-    <h2>2. Stratégie UI/UX et Interactions</h2>
+    <h2>2. Ma Solution : Une Assistance Tête Haute (HUD)</h2>
     <p>
-        L'interface a été spécifiquement pensée pour s'adapter à la cabine du Cabri G2 (1,24 m de large) sans obstruer les instruments réels[cite: 240, 241].
+        L'application permet d'afficher les instructions en superposition avec le tableau de bord réel. Grâce aux capteurs de profondeur de l'HoloLens 2, les hologrammes sont "ancrés" de manière stable dans l'espace (Spatial Mapping)[cite: 73].
     </p>
 
     <div class="feature-grid">
         <div class="feature-item">
-            <strong>🖐️ Suivi des mains :</strong> Interaction naturelle via le <span class="highlight">Hand Tracking</span> pour manipuler les hologrammes[cite: 74, 184].
+            <strong>🖐️ Interactions Gestuelles :</strong> Utilisation du suivi des mains pour valider les étapes sans manipulations complexes.
         </div>
         <div class="feature-item">
-            <strong>🎤 Commandes vocales :</strong> Validation des étapes sans lâcher les commandes de vol (cyclique et collectif)[cite: 20, 243].
-        </div>
-        <div class="feature-item">
-            <strong>🌍 Spatial Mapping :</strong> Ancrage stable des éléments virtuels dans la géométrie réelle du cockpit[cite: 73, 97].
-        </div>
-        <div class="feature-item">
-            <strong>📈 Barres de progression :</strong> Visualisation immédiate de l'avancement global des procédures[cite: 246, 290].
+            <strong>🌍 Sécurité Visuelle :</strong> Placement précis des fenêtres pour ne jamais obstruer les instruments réels ou l'axe de vision critique.
         </div>
     </div>
 
-    <img src="ui_design.png" alt="Conception ergonomique" class="project-image">
-    <div class="image-caption">Évolution de la disposition des éléments pour maximiser le confort visuel et la sécurité[cite: 242, 260].</div>
+    <img src="ui_design.png" alt="Évolution UI/UX" class="project-image">
+    <div class="image-caption">Optimisation de l'interface pour réduire la charge mentale et les ruptures d'attention.</div>
 
-    <h2>3. Développement sous Unreal Engine 5</h2>
+    <h2>3. Développement Technique & Blueprints</h2>
     <p>
-        Le projet s'appuie sur le système de <span class="highlight">Blueprints</span> (scripting visuel), permettant de construire des algorithmes complexes de manière intuitive[cite: 87, 88].
+        Le projet s'appuie sur le système de scripting visuel <span class="highlight">Blueprints</span>. J'ai implémenté une logique événementielle robuste pour surveiller les interactions en temps réel et assurer une progression fluide des étapes de vol[cite: 87, 270, 271].
     </p>
     
-    <img src="blueprint_logic.png" alt="Logique de programmation Blueprint" class="project-image">
-    <div class="image-caption">Implémentation de la logique séquentielle pour la gestion des étapes et de l'UI[cite: 264, 270].</div>
+    <img src="blueprint_logic.png" alt="Logique de programmation" class="project-image">
+    <div class="image-caption">Architecture logicielle gérant la validation séquentielle et les retours visuels dynamiques.</div>
 
+    <h2>4. Validation en Conditions Réelles</h2>
     <p>
-        La programmation événementielle, pilotée par le nœud <strong>Event Tick</strong>, assure une surveillance en temps réel des interactions de l'élève[cite: 271]. 
-        Des sécurités mathématiques (nœud <span class="highlight">Clamp</span>) garantissent que les barres de progression ne sortent jamais de leurs limites visuelles[cite: 281, 282].
-    </p>
-
-    <h2>4. Validation sur simulateur</h2>
-    <p>
-        La validation finale a été réalisée sur le simulateur de l'IUT de Cachan[cite: 297]. 
-        Grâce au <strong>Holographic Remoting</strong>, les hologrammes ont été ajustés en direct pour garantir qu'ils ne masquent aucun instrument de bord réel[cite: 299, 302].
+        La phase de test finale a été menée sur le simulateur de l'IUT de Cachan. L'utilisation du <span class="highlight">Holographic Remoting</span> a été cruciale pour ajuster l'ergonomie en direct, directement depuis le siège du pilote[cite: 299, 301].
     </p>
 
     <img src="simulateur.jpg" alt="Tests sur simulateur" class="project-image">
-    <div class="image-caption">Mise en situation réelle pour valider l'ergonomie et l'ancrage spatial du système[cite: 303, 309].</div>
+    <div class="image-caption">Validation finale : une interface parfaitement adaptée aux contraintes spatiales du cockpit.</div>
 
     <div class="footer">
-        Projet SAE BUT 3 GEII - Réalisé par Yassine Mesbahi et Mamadou-cellou Diallo (2025)[cite: 7].
+        Projet SAE - Réalisé par Yassine Mesbahi et Mamadou-cellou Diallo (2025).
     </div>
 </body>
-</html>
+</html>F
