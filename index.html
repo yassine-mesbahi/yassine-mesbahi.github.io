@@ -10,8 +10,15 @@
         .header { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { margin: 0; font-size: 2.5em; }
         .subtitle { font-size: 1.2em; opacity: 0.9; margin-top: 10px; }
-        .contact-links { margin-top: 25px; }
-        .contact-links a { display: inline-block; background: white; color: #1e3a8a; padding: 10px 25px; margin: 5px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        
+        /* Style des liens de contact */
+        .contact-links { margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .contact-links a { display: inline-block; background: white; color: #1e3a8a; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; font-size: 0.9em; }
+        .contact-links a:hover { transform: scale(1.05); background: #e5e7eb; }
+        
+        /* Bouton CV spécifique */
+        .cv-button { background: #ffd700 !important; color: #1e3a8a !important; border: 2px solid #1e3a8a; }
+
         .section-title { font-size: 1.8em; color: #1e3a8a; border-bottom: 3px solid #3b82f6; display: inline-block; margin-bottom: 25px; margin-top: 40px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 5px solid #3b82f6; display: flex; flex-direction: column; }
@@ -31,7 +38,9 @@
         <p>Expertise en Électronique et Informatique Industrielle</p>
         <div class="contact-links">
             <a href="https://www.linkedin.com/in/yassine-mesbahi/">🔗 LinkedIn</a>
-            <a href="mailto:yassinemesbahi7@gmail.com">📧 Email</a>
+            <a href="mailto:yassinemesbahi7@gmail.com">📧 yassinemesbahi7@gmail.com</a>
+            <a href="tel:+33695518992">📞 06 95 51 89 92</a>
+            <a href="CV_Yassine_Mesbahi.pdf" class="cv-button" target="_blank">📄 Télécharger mon CV</a>
         </div>
     </div>
 
@@ -39,19 +48,19 @@
     <div class="grid">
         <div class="card">
             <div class="school-header">
-                <img src="ensea.png" alt="" class="school-logo">
+                <img src="ensea.png" alt="Logo ENSEA" class="school-logo">
                 <h3>Cycle Ingénieur (Apprentissage)</h3>
             </div>
             <span class="date">ENSEA Cergy | 2026 - 2029 (prochainement)</span>
-            <p>Formation d'ingénieur spécialisée en systèmes embarqués.</p>
+            <p>Formation d'ingénieur spécialisée en électronique, informatique industrielle et systèmes embarqués[cite: 22, 23, 25].</p>
         </div>
         <div class="card">
             <div class="school-header">
-                <img src="cachan.png" alt="" class="school-logo">
+                <img src="cachan.png" alt="Logo IUT Cachan" class="school-logo">
                 <h3>BUT GEII - Robotique</h3>
             </div>
             <span class="date">IUT de Cachan | 2023 - 2026</span>
-            <p>Spécialisation Robotique et Systèmes Embarqués.</p>
+            <p>Spécialisation Robotique et Systèmes Embarqués[cite: 20, 21].</p>
         </div>
     </div>
 
@@ -59,14 +68,14 @@
     <div class="grid">
         <div class="card">
             <h3>Stage Assistant Ingénieur - SECRE Composants</h3>
-            <span class="date">Février 2026 - En cours</span>
-            <p>Optimisation de production et tests sur analyseur de spectre.</p>
+            <span class="date">09/02/2026 - En cours</span>
+            <p>Optimisation de production, tests fréquentiels et maintenance industrielle[cite: 13, 14, 15].</p>
             <div class="tag-container"><span class="tag">Maintenance</span><span class="tag">Électronique</span></div>
         </div>
         <div class="card">
             <h3>Stage Technicien Robotique - Igus France</h3>
-            <span class="date">Juin 2025 - Juillet 2025</span>
-            <p>Intégration de solutions robotiques et vision temps réel.</p>
+            <span class="date">02/06/2025 - 31/07/2025</span>
+            <p>Intégration de solutions robotiques industrielles (LCA) et vision temps réel[cite: 26, 27, 28, 29].</p>
             <div class="tag-container"><span class="tag">Robotique</span><span class="tag">Vision 2D</span></div>
         </div>
     </div>
@@ -75,21 +84,21 @@
     <div class="grid">
         <div class="card">
             <h3>HoloCheck (Réalité Mixte)</h3>
-            <span class="date">2025</span>
-            <p>Application HoloLens 2 pour checklists aéronautiques.</p>
+            <span class="date">Septembre 2025 - Décembre 2025</span>
+            <p>Application HoloLens 2 pour checklists aéronautiques (Hélicoptères Cabri G2) sous Unreal Engine 5.</p>
             <div class="tag-container"><span class="tag">Unreal Engine 5</span><span class="tag">HoloLens 2</span></div>
         </div>
         <div class="card">
             <h3>COVAPSY (Voiture Autonome)</h3>
-            <span class="date">2024 - 2025</span>
-            <p>Navigation LiDAR et Bus CAN. 🏆 2ème place.</p>
+            <span class="date">15/10/2024 - 05/04/2025</span>
+            <p>Navigation LiDAR, communication Bus CAN et programmation STM32. 🏆 2ème place[cite: 40, 41, 42, 43].</p>
             <div class="tag-container"><span class="tag">STM32</span><span class="tag">C++</span><span class="tag">LIDAR</span></div>
         </div>
         <div class="card">
             <h3>Gamel Trophy (Robot suiveur)</h3>
-            <span class="date">2023 - 2024</span>
-            <p>Routage PCB KiCad et programmation C++.</p>
-            <div class="tag-container"><span class="tag">KiCad</span><span class="tag">C++</span></div>
+            <span class="date">21/09/2023 - 09/02/2024</span>
+            <p>Routage PCB KiCad, brasage de composants CMS et programmation C++[cite: 45, 46, 47, 48].</p>
+            <div class="tag-container"><span class="tag">KiCad</span><span class="tag">C++</span><span class="tag">PCB</span></div>
         </div>
     </div>
 </div>
