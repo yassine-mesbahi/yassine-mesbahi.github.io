@@ -28,76 +28,24 @@
     <div class="tech-stack">
         <span class="tech-tag">Unreal Engine 5</span>
         <span class="tech-tag">HoloLens 2</span>
-        <span class="tech-tag">MRTK</span>
-        <span class="tech-tag">Reconnaissance Vocale</span>
         <span class="tech-tag">Blueprints</span>
+        <span class="tech-tag">UX/UI Design</span>
     </div>
 
     <p>
-        <strong>HoloCheck</strong> est une application de réalité mixte développée pour les pilotes de l'hélicoptère <strong>Guimbal Cabri G2</strong>[cite: 18]. 
-        Le système dématérialise les checklists de vol via une interface interactive ancrée dans le champ de vision, permettant de valider les procédures de sécurité sans quitter l'environnement des yeux[cite: 55, 57].
+        <strong>HoloCheck</strong> est une application de réalité mixte développée pour les pilotes de l'hélicoptère <strong>Guimbal Cabri G2</strong>. 
+        Le système dématérialise les checklists de vol via une interface interactive ancrée dans le champ de vision, permettant de valider les procédures de sécurité sans quitter l'environnement des yeux.
     </p>
 
     <h2>1. L'appareil de référence</h2>
     <img src="Hélicoptère_Cabri_G2_-_F-HORS.jpg" alt="Hélicoptère Guimbal Cabri G2" class="project-media">
-    <div class="image-caption">Le Guimbal Cabri G2 : l'hélicoptère biplace utilisé pour l'étude ergonomique[cite: 63].</div>
+    <div class="image-caption">Le Guimbal Cabri G2 : l'hélicoptère biplace utilisé pour l'étude ergonomique.</div>
 
     <h2>2. Analyse du besoin et Problématique</h2>
     <p>
-        Dans un cockpit exigu de 1,24 m de large [cite: 240, 416], l'utilisation d'une checklist papier traditionnelle force le pilote à détourner le regard et à lâcher ponctuellement les commandes[cite: 33, 34]. 
-        HoloCheck supprime ces "ruptures d'attention" en projetant les informations essentielles directement dans le champ de vision[cite: 37, 50].
+        Dans un cockpit exigu de 1,24 m de large, l'utilisation d'une checklist papier traditionnelle force le pilote à détourner le regard et à lâcher ponctuellement les commandes. 
+        HoloCheck supprime ces "ruptures d'attention" en projetant les informations essentielles directement dans le champ de vision.
     </p>
 
     <img src="exel.png" alt="Analyse de la checklist" class="project-media">
-    <div class="image-caption">Transformation de la documentation passive en une structure de données active et segmentée[cite: 210, 213].</div>
-
-    <h2>3. Conception Ergonomique et Interactions</h2>
-    <p>
-        L'interface a été optimisée pour réduire la charge cognitive et ne jamais obstruer les instruments réels[cite: 211, 241].
-    </p>
-    <div class="feature-grid">
-        <div class="feature-item">
-            <strong>🎤 Commandes Vocales :</strong> Validation des étapes en disant "Check" ou fermeture de l'app via une commande vocale pour rester 100% concentré sur les commandes de vol[cite: 243, 707, 708].
-        </div>
-        <div class="feature-item">
-            <strong>🖐️ Hand Tracking :</strong> Interaction naturelle par geste de pincement (pinch) pour manipuler les hologrammes[cite: 119, 120].
-        </div>
-        <div class="feature-item">
-            <strong>🌍 Spatial Mapping :</strong> Ancrage stable des menus dans l'espace physique du cockpit grâce aux capteurs de l'HoloLens 2[cite: 73, 97].
-        </div>
-        <div class="feature-item">
-            <strong>📊 Barres de Progression :</strong> Suivi dynamique de l'avancement des 35 étapes de sécurité[cite: 246, 290].
-        </div>
-    </div>
-
-    <img src="ui_design.png" alt="Design UI/UX" class="project-media">
-    <div class="image-caption">Optimisation de la disposition des éléments (Before/After) pour maximiser le confort visuel[cite: 242, 260].</div>
-
-    <h2>4. Développement Technique sous Unreal Engine 5</h2>
-    <p>
-        La logique logicielle utilise le système de <strong>Blueprints</strong> (scripting visuel)[cite: 87, 88]. Le flux de données est surveillé en temps réel via le nœud <strong>Event Tick</strong> pour garantir une réactivité parfaite[cite: 270, 271].
-    </p>
-    
-    <img src="blueprint_logic.png" alt="Logique Blueprint" class="project-media">
-    <div class="image-caption">Architecture logicielle gérant la validation séquentielle et la mise à jour dynamique de l'interface[cite: 124, 286].</div>
-
-    <h2>5. Validation sur Simulateur</h2>
-    <p>
-        Les tests finaux sur le simulateur de l'IUT de Cachan ont permis d'ajuster l'ergonomie en direct via le <strong>Holographic Remoting</strong>[cite: 297, 299, 301].
-    </p>
-
-    <img src="simulateur.png" alt="Tests en simulateur" class="project-media">
-    <div class="image-caption">Mise en situation réelle pour valider l'assistance tête haute et l'absence d'obstruction visuelle[cite: 302, 303].</div>
-
-    <h2>6. Démonstration de l'interface</h2>
-    <video class="project-media" controls muted loop playsinline>
-        <source src="testok.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la lecture de vidéos.
-    </video>
-    <div class="image-caption">Vidéo de démonstration : navigation interactive entre les étapes et retour visuel coloré[cite: 20, 25].</div>
-
-    <div class="footer">
-        Projet réalisé par Yassine Mesbahi - BUT GEII (2025).
-    </div>
-</body>
-</html>
+    <div class="image-caption">Transformation de la documentation passive en une structure de données active
