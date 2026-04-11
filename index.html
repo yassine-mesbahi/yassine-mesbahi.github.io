@@ -5,32 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yassine Mesbahi - Portfolio</title>
     <style>
-        /* Style Global */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        
-        /* En-tête (Header) */
-        .header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { margin: 0; font-size: 2.8em; letter-spacing: 1px; }
-        .subtitle { font-size: 1.3em; opacity: 0.9; margin-top: 10px; font-weight: 300; }
-        
-        /* Section Contact Direct */
-        .contact-links { margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .contact-links a { display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.15); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 500; transition: 0.3s; border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(5px); }
-        .contact-links a:hover { background: white; color: #1e3a8a; transform: translateY(-3px); }
-        
-        /* Bouton CV */
-        .cv-container { margin-top: 25px; }
-        .cv-button { background: #ffd700 !important; color: #1e3a8a !important; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: 0.3s; border: 2px solid transparent; }
-        .cv-button:hover { background: #ffcc00 !important; transform: scale(1.05); border: 2px solid #1e3a8a; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; border-radius: 12px; margin-bottom: 30px; }
+        h1 { margin: 0; font-size: 2.5em; }
+        .contact-links { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .contact-links a { background: white; color: #1e3a8a; padding: 8px 15px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.9em; }
+        .cv-button { background: #ffd700 !important; color: #1e3a8a !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; border: 2px solid #1e3a8a; }
+        .section-title { font-size: 1.8em; color: #1e3a8a; border-bottom: 3px solid #3b82f6; display: inline-block; margin: 40px 0 20px 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; transition: 0.3s; height: 100%; box-sizing: border-box; }
+        .card:hover { transform: translateY(-5px); cursor: pointer; border-top-color: #ffd700; }
+        .school-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .school-logo { width: 40px; height: auto; }
+        .date { color: #65676b; font-weight: bold; font-size: 0.85em; display: block; margin-bottom: 10px; }
+        .tag { background: #eef2ff; color: #4338ca; padding: 3px 10px; border-radius: 15px; font-size: 0.75em; font-weight: bold; margin-right: 5px; }
+    </style>
+</head>
+<body>
 
-        /* Titres de Sections */
-        .section-title { font-size: 1.8em; color: #1e3a8a; border-bottom: 3px solid #3b82f6; display: inline-block; margin-bottom: 30px; margin-top: 50px; padding-bottom: 5px; }
-        
-        /* Grille et Cartes Cliquables */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        
-        .project-link { text-decoration: none; color: inherit; display: block; }
-        
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 6px solid #3b82f6; display: flex; flex-direction: column; transition: 0.3s; height: 100%; box-sizing: border-box; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); border
+<div class="container">
+    <div class="header">
+        <h1>Yassine Mesbahi</h1>
+        <p style="font-size: 1.2em; opacity: 0.9;">🎓 Futur Apprenti Ingénieur ENSEA</p>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/yassine-mesbahi/">🔗 LinkedIn</a>
+            <a href="mailto:yassinemesbahi7@gmail.com">📧 yassinemesbahi7@gmail.com</a>
+            <a href="tel:+33695518992">📞 06 95 51 89 92</a>
+        </div>
+        <a href="CV_Yassine_Mesbahi.pdf" class="cv-button">📄 MON CV (PDF)</a>
+    </div>
+
+    <h2 class="section-title">Ma Formation</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="school-header">
+                <img src="ensea.png" alt="" class="school-logo">
+                <h3>Cycle Ingénieur (Apprentissage)</h3>
+            </div>
+            <span class="date">ENSEA Cergy | 2026 - 2029 (prochainement)</span>
+            <p>Systèmes embarqués et informatique industrielle.</p>
+        </div>
+        <div class="card">
+            <div class="school-header">
+                <img src="cachan.png" alt="" class="school-logo">
+                <h3>BUT GEII - Robotique</h3>
+            </div>
+            <span class="date">IUT de Cachan | 2023 - 2026</span>
