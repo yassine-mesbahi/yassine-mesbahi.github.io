@@ -44,75 +44,75 @@
         </div>
 
         <p>
-            <strong>HoloCheck</strong> est une application de Réalité Mixte conçue pour les pilotes d'hélicoptère <strong>Guimbal Cabri G2</strong>[cite: 18, 63]. 
-            Elle remplace le manuel papier traditionnel par une interface holographique interactive afin d'éliminer les "ruptures d'attention" et d'améliorer la sécurité lors des phases critiques de préparation de vol[cite: 34, 38].
+            <strong>HoloCheck</strong> est une application de Réalité Mixte conçue pour les pilotes d'hélicoptère <strong>Guimbal Cabri G2</strong>. 
+            Elle remplace le manuel papier traditionnel par une interface holographique interactive afin d'éliminer les "ruptures d'attention" et d'améliorer la sécurité lors des phases critiques de préparation de vol.
         </p>
 
         <img src="Hélicoptère_Cabri_G2_-_F-HORS.jpg" alt="Guimbal Cabri G2" class="project-media">
-        <div class="image-caption">L'hélicoptère de référence : un cockpit biplace de 1,24m de large imposant de fortes contraintes d'espace[cite: 63, 416].</div>
+        <div class="image-caption">L'hélicoptère de référence : un cockpit biplace de 1,24m de large imposant de fortes contraintes d'espace.</div>
 
         <h2>1. Analyse et Structuration des Données</h2>
         <p>
-            Le projet a débuté par la transformation d'une documentation passive en une assistance active[cite: 210, 394]. Nous avons segmenté les 35 étapes du manuel de vol original dans un tableau Excel pour créer une structure de données logique et séquentielle[cite: 213, 214].
+            Le projet a débuté par la transformation d'une documentation passive en une assistance active. Nous avons segmenté les 35 étapes du manuel de vol original dans un tableau Excel pour créer une structure de données logique et séquentielle.
         </p>
         <img src="exel.png" alt="Analyse Excel de la checklist" class="project-media">
-        <div class="image-caption">Transformation du manuel papier en étapes claires pour l'algorithme[cite: 214, 619].</div>
+        <div class="image-caption">Transformation du manuel papier en étapes claires pour l'algorithm.</div>
 
         <h2>2. Environnement Matériel et Configuration</h2>
         <p>
-            L'utilisation du casque <strong>Microsoft HoloLens 2</strong> a été privilégiée pour sa puce HPU (Holographic Processing Unit) dédiée au traitement des hologrammes et ses capteurs de profondeur permettant le Spatial Mapping (cartographie 3D du cockpit)[cite: 68, 71, 73].
+            L'utilisation du casque <strong>Microsoft HoloLens 2</strong> a été privilégiée pour sa puce HPU (Holographic Processing Unit) dédiée au traitement des hologrammes et ses capteurs de profondeur permettant le Spatial Mapping (cartographie 3D du cockpit).
         </p>
         <img src="hololens_device.png" alt="Casque HoloLens 2" class="project-media">
-        <div class="image-caption">Architecture matérielle : capteurs de suivi, caméras infrarouges (Eye Tracking) et capteurs ToF[cite: 73, 431].</div>
+        <div class="image-caption">Architecture matérielle : capteurs de suivi, caméras infrarouges (Eye Tracking) et capteurs ToF.</div>
 
         <h3>Configuration logicielle (UE5)</h3>
         <p>
-            Le développement a nécessité une configuration précise sous Unreal Engine 5.3, incluant l'activation des plugins MRTK (Mixed Reality Toolkit) et UX Tools pour la gestion native des interactions RM[cite: 144, 151, 152].
+            Le développement a nécessité une configuration précise sous Unreal Engine 5.3, incluant l'activation des plugins MRTK (Mixed Reality Toolkit) et UX Tools pour la gestion native des interactions RM.
         </p>
-        <img src="config.jpg" alt="Configuration Unreal Engine" class="project-media">
-        <div class="image-caption">Paramétrage de l'écosystème : SDK Windows 10, plugins Microsoft et mode Mobile Scalable[cite: 143, 146, 149].</div>
+        <img src="config.png" alt="Configuration Unreal Engine" class="project-media">
+        <div class="image-caption">Paramétrage de l'écosystème : SDK Windows 10, plugins Microsoft et mode Mobile Scalable.</div>
 
         <h2>3. Preuve de Concept et Logique Automate</h2>
         <p>
-            Avant de réaliser l'interface finale, un projet test ("Cube interactif") a permis de valider la chaîne de production et le geste de pincement (pinch) via le composant <i>uxt generic manipulator</i>[cite: 118, 119, 200].
+            Avant de réaliser l'interface finale, un projet test ("Cube interactif") a permis de valider la chaîne de production et le geste de pincement (pinch) via le composant <i>uxt generic manipulator</i>.
         </p>
-        <img src="projet cube.jpg" alt="Projet Cube POC" class="project-media">
-        <div class="image-caption">Validation du suivi des mains (Hand Tracking) et des interactions 3D de base[cite: 120, 179].</div>
+        <img src="projet cube.png" alt="Projet Cube POC" class="project-media">
+        <div class="image-caption">Validation du suivi des mains (Hand Tracking) et des interactions 3D de base.</div>
 
         <h3>Logique de l'Automate Fonctionnel</h3>
         <p>
-            L'application repose sur une machine à états rigoureuse développée en Blueprints. Un flux d'exécution <i>Sequence</i> est utilisé pour surveiller à chaque image (Event Tick) les interactions de l'utilisateur[cite: 270, 272].
+            L'application repose sur une machine à états rigoureuse développée en Blueprints. Un flux d'exécution <i>Sequence</i> est utilisé pour surveiller à chaque image (Event Tick) les interactions de l'utilisateur.
         </p>
         <img src="then.png" alt="Logique de séquence" class="project-media">
-        <div class="image-caption">Structure de l'automate : traitement séparé des commandes 'Suivant', 'Précédent' et des relâchements[cite: 273, 657].</div>
+        <div class="image-caption">Structure de l'automate : traitement séparé des commandes 'Suivant', 'Précédent' et des relâchements.</div>
 
         <img src="exmplee boutonn.png" alt="Logique bouton" class="project-media">
-        <div class="image-caption">Exemple d'un état de l'automate gérant la mise à jour dynamique de l'UI et la progression[cite: 290, 672].</div>
+        <div class="image-caption">Exemple d'un état de l'automate gérant la mise à jour dynamique de l'UI et la progression.</div>
 
         <h2>4. Implémentation de la Session AR</h2>
         <p>
-            Le démarrage de l'expérience utilise un <i>Pawn</i> spécifique (MRPawn) qui initialise la session AR et active le tracking des mains dès le lancement de l'application[cite: 183, 184, 185].
+            Le démarrage de l'expérience utilise un <i>Pawn</i> spécifique (MRPawn) qui initialise la session AR et active le tracking des mains dès le lancement de l'application.
         </p>
         <img src="start.png" alt="Blueprint de démarrage" class="project-media">
-        <div class="image-caption">Logique Blueprint : Lancement de la session de Réalité Mixte et gestion des commandes vocales[cite: 562].</div>
+        <div class="image-caption">Logique Blueprint : Lancement de la session de Réalité Mixte et gestion des commandes vocales.</div>
 
         <h2>5. Tests et Validation sur Simulateur</h2>
         <p>
-            La validation finale a été effectuée sur le simulateur Cabri G2 de l'IUT de Cachan[cite: 297]. L'utilisation du <i>Holographic Remoting</i> a permis d'ajuster en temps réel la position des hologrammes pour garantir une visibilité optimale des instruments réels[cite: 299, 301, 302].
+            La validation finale a été effectuée sur le simulateur Cabri G2 de l'IUT de Cachan. L'utilisation du <i>Holographic Remoting</i> a permis d'ajuster en temps réel la position des hologrammes pour garantir une visibilité optimale des instruments réels.
         </p>
-        <img src="simulateur.jpg" alt="Tests en simulateur" class="project-media">
-        <div class="image-caption">Mise en situation réelle : calibrage de la distance d'affichage et de l'ancrage spatial[cite: 301, 303].</div>
+        <img src="simulateur.png" alt="Tests en simulateur" class="project-media">
+        <div class="image-caption">Mise en situation réelle : calibrage de la distance d'affichage et de l'ancrage spatial.</div>
 
         <h2>6. Démonstration Finale</h2>
         <video class="project-media" controls muted loop playsinline>
             <source src="testok.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
-        <div class="image-caption">Vidéo de démonstration : Navigation fluide, retour visuel coloré et barres de progression dynamiques[cite: 20, 290].</div>
+        <div class="image-caption">Vidéo de démonstration : Navigation fluide, retour visuel coloré et barres de progression dynamiques.</div>
 
         <div class="footer">
-            <strong>Binôme :</strong> Yassine Mesbahi & Mamadou-cellou Diallo [cite: 7] <br>
-            BUT GEII - IUT de Cachan (2025) [cite: 3, 381]
+            <strong>Binôme :</strong> Yassine Mesbahi <br>
+            BUT GEII - IUT de Cachan (2025)
         </div>
     </div>
 
