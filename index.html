@@ -20,24 +20,37 @@
         .contact-links a { background: white; color: #1e3a8a; padding: 8px 15px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.9em; transition: 0.3s; }
         .contact-links a:hover { transform: scale(1.05); }
 
-        /* Sections */
+        /* Sections Titres */
         .section-title { font-size: 1.8em; color: #1e3a8a; border-bottom: 3px solid #3b82f6; display: inline-block; margin: 40px 0 20px 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         
-        /* Cards */
+        /* Grille par défaut (Expériences, Projets) */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; transition: 0.3s; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-top-color: #ffd700; }
         .clickable { cursor: pointer; }
-        
-        .school-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
-        .school-logo { width: 45px; height: auto; border-radius: 4px; }
-        
         .card h3 { margin: 0; color: #1e3a8a; font-size: 1.2em; }
         .date { color: #65676b; font-weight: bold; font-size: 0.85em; display: block; margin-bottom: 10px; }
         
+        /* Liste Formation (Style Polytech) */
+        .formation-container { background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; }
+        .list-item { display: flex; align-items: flex-start; gap: 25px; padding: 25px 0; border-bottom: 1px solid #e5e7eb; }
+        .list-item:last-child { border-bottom: none; padding-bottom: 5px; }
+        .list-item:first-child { padding-top: 5px; }
+        .list-logo-container { flex-shrink: 0; width: 90px; display: flex; justify-content: center; padding-top: 5px; }
+        .list-logo { max-width: 100%; height: auto; max-height: 65px; object-fit: contain; }
+        .list-content { display: flex; flex-direction: column; }
+        .list-date { color: #3b82f6; font-weight: 700; font-size: 0.95em; margin-bottom: 4px; }
+        .list-title { color: #1e3a8a; font-size: 1.3em; font-weight: 700; margin: 0 0 6px 0; line-height: 1.3; }
+        .list-details { color: #65676b; font-size: 0.95em; margin: 0; }
+
         /* Tags */
         .tag-container { margin-top: auto; padding-top: 15px; }
         .tag { background: #eef2ff; color: #4338ca; padding: 4px 10px; border-radius: 15px; font-size: 0.75em; font-weight: bold; margin-right: 5px; margin-bottom: 5px; display: inline-block; }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            .list-item { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -58,23 +71,30 @@
     </div>
 
     <h2 class="section-title">Ma Formation</h2>
-    <div class="grid">
-        <div class="card">
-            <div class="school-header">
-                <img src="ensea.png" alt="Logo ENSEA" class="school-logo">
-                <h3>Cycle Ingénieur</h3>
+    <div class="formation-container">
+        
+        <div class="list-item">
+            <div class="list-logo-container">
+                <img src="ensea.png" alt="Logo ENSEA" class="list-logo">
             </div>
-            <span class="date">2026 - 2029 (prochainement) | ENSEA</span>
-            <p>Spécialisé en électronique et informatique industrielle.<br>Formation par apprentissage (3 ans).</p>
-        </div>
-        <div class="card">
-            <div class="school-header">
-                <img src="cachan.png" alt="Logo Cachan" class="school-logo">
-                <h3>BUT GEII (Génie Électrique et Informatique Industrielle)</h3>
+            <div class="list-content">
+                <span class="list-date">2026 - 2029 (prochainement)</span>
+                <h3 class="list-title">Cycle Ingénieur - spécialisé en électronique et informatique industrielle</h3>
+                <p class="list-details">Formation par apprentissage (3 ans) | ENSEA</p>
             </div>
-            <span class="date">2023 - 2026 (en cours) | IUT de Cachan - Université Paris-Saclay</span>
-            <p>Spécialité Électronique Embarquée (Robotique).</p>
         </div>
+
+        <div class="list-item">
+            <div class="list-logo-container">
+                <img src="cachan.png" alt="Logo Cachan" class="list-logo">
+            </div>
+            <div class="list-content">
+                <span class="list-date">2023 - 2026 (en cours)</span>
+                <h3 class="list-title">BUT GEII (Génie Électrique et Informatique Industrielle)</h3>
+                <p class="list-details">Spécialité Électronique Embarquée (Robotique) | IUT de Cachan - Université Paris-Saclay</p>
+            </div>
+        </div>
+
     </div>
 
     <h2 class="section-title">Expériences Professionnelles</h2>
