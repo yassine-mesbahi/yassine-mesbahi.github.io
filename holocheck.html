@@ -44,86 +44,86 @@
         </div>
 
         <p>
-            <strong>HoloCheck</strong> est une application de Réalité Mixte conçue pour les pilotes d'hélicoptère <strong>Guimbal Cabri G2</strong>[cite: 18, 48]. Elle remplace le manuel papier traditionnel par une interface holographique interactive afin d'éliminer les "ruptures d'attention" et d'améliorer la sécurité lors des phases critiques de préparation de vol[cite: 34, 51, 54].
+            <strong>HoloCheck</strong> est une application de Réalité Mixte conçue pour les pilotes d'hélicoptère <strong>Guimbal Cabri G2</strong>. Elle remplace le manuel papier traditionnel par une interface holographique interactive afin d'éliminer les "ruptures d'attention" et d'améliorer la sécurité lors des phases critiques de préparation de vol.
         </p>
 
-        <img src="Hélicoptère_Cabri_G2_-_F-HORS.jpg" alt="Guimbal Cabri G2" class="project-media">
-        <div class="image-caption">L'hélicoptère de référence : un cockpit biplace de 1,24 m de large imposant de fortes contraintes d'espace[cite: 63, 65, 96].</div>
+        <img src="Hélicoptère_Cabri_G2_-_F-HORS.png" alt="Guimbal Cabri G2" class="project-media">
+        <div class="image-caption">L'hélicoptère de référence : un cockpit biplace de 1,24 m de large imposant de fortes contraintes d'espace.</div>
 
         <h2>1. Analyse et Structuration des Données</h2>
         <p>
-            Le projet a débuté par la transformation d'une documentation passive en une assistance active[cite: 210]. Nous avons segmenté les 35 étapes du manuel de vol original dans un tableau Excel pour créer une structure de données logique et séquentielle[cite: 213, 214].
+            Le projet a débuté par la transformation d'une documentation passive en une assistance active. Nous avons segmenté les 35 étapes du manuel de vol original dans un tableau Excel pour créer une structure de données logique et séquentielle.
         </p>
         <img src="exel.png" alt="Analyse Excel de la checklist" class="project-media">
-        <div class="image-caption">Transformation du manuel papier en étapes claires pour l'algorithme[cite: 237].</div>
+        <div class="image-caption">Transformation du manuel papier en étapes claires pour l'algorithme.</div>
 
         <h2>2. Environnement Matériel (Hardware)</h2>
         <p>
-            L'utilisation du casque <strong>Microsoft HoloLens 2</strong> a été privilégiée pour son architecture spécifique[cite: 68]. Il intègre une <strong>HPU (Holographic Processing Unit)</strong>, une puce dédiée qui gère spécifiquement le traitement des hologrammes, ce qui permet de préserver la batterie et d'éviter la surchauffe lors d'une utilisation embarquée[cite: 70, 71].
+            L'utilisation du casque <strong>Microsoft HoloLens 2</strong> a été privilégiée pour son architecture spécifique. Il intègre une <strong>HPU (Holographic Processing Unit)</strong>, une puce dédiée qui gère spécifiquement le traitement des hologrammes, ce qui permet de préserver la batterie et d'éviter la surchauffe lors d'une utilisation embarquée.
         </p>
         <div class="feature-grid">
             <img src="hololens_device.png" alt="Vue extérieure HoloLens 2" class="project-media">
             <img src="image_2026-04-12_172317630.png" alt="Composants internes HoloLens 2" class="project-media">
         </div>
-        <div class="image-caption">À gauche : Vue extérieure du casque[cite: 82]. À droite : Architecture interne détaillée (caméras infrarouges pour l'Eye Tracking, capteurs ToF pour le Spatial Mapping)[cite: 73, 74].</div>
+        <div class="image-caption">À gauche : Vue extérieure du casque. À droite : Architecture interne détaillée (caméras infrarouges pour l'Eye Tracking, capteurs ToF pour le Spatial Mapping).</div>
 
         <h3>Configuration logicielle (UE5)</h3>
         <p>
-            Le développement a nécessité une configuration précise sous <strong>Unreal Engine 5.3</strong>[cite: 144]. La mise en place de l'écosystème a inclus l'activation du <strong>MRTK (Mixed Reality Toolkit)</strong> et des <strong>UX Tools</strong> pour la gestion native des interactions RM comme les menus et boutons 3D[cite: 149, 151, 152].
+            Le développement a nécessité une configuration précise sous <strong>Unreal Engine 5.3</strong>. La mise en place de l'écosystème a inclus l'activation du <strong>MRTK (Mixed Reality Toolkit)</strong> et des <strong>UX Tools</strong> pour la gestion native des interactions RM comme les menus et boutons 3D.
         </p>
-        <img src="config.jpg" alt="Configuration Unreal Engine" class="project-media">
-        <div class="image-caption">Paramétrage de l'écosystème : SDK Windows 10 et activation des modules de Réalité Mixte[cite: 166].</div>
+        <img src="config.png" alt="Configuration Unreal Engine" class="project-media">
+        <div class="image-caption">Paramétrage de l'écosystème : SDK Windows 10 et activation des modules de Réalité Mixte.</div>
 
         <h2>3. Preuve de Concept et Logique Automate</h2>
         <p>
-            Avant de réaliser l'interface finale, un projet test ("Cube interactif") a permis de valider la prise en main d'Unreal Engine 5 ainsi que du casque HoloLens 2, notamment l'interaction par geste de pincement (pinch) via le composant <i>uxt generic manipulator</i>[cite: 118, 119, 200].
+            Avant de réaliser l'interface finale, un projet test ("Cube interactif") a permis de valider la prise en main d'Unreal Engine 5 ainsi que du casque HoloLens 2, notamment l'interaction par geste de pincement (pinch) via le composant <i>uxt generic manipulator</i>.
         </p>
-        <img src="projet cube.jpg" alt="Projet Cube POC" class="project-media">
-        <div class="image-caption">Validation du suivi des mains (Hand Tracking) et des interactions 3D de base[cite: 120].</div>
+        <img src="projet cube.png" alt="Projet Cube POC" class="project-media">
+        <div class="image-caption">Validation du suivi des mains (Hand Tracking) et des interactions 3D de base.</div>
 
         <h3>Logique de l'Automate Fonctionnel</h3>
         <p>
-            L'application repose sur une machine à états rigoureuse développée en Blueprints[cite: 87, 88]. Un flux d'exécution <i>Sequence</i> est utilisé pour surveiller à chaque image (Event Tick) les interactions de l'utilisateur[cite: 270, 272].
+            L'application repose sur une machine à états rigoureuse développée en Blueprints. Un flux d'exécution <i>Sequence</i> est utilisé pour surveiller à chaque image (Event Tick) les interactions de l'utilisateur.
         </p>
         <img src="then.png" alt="Logique de séquence" class="project-media">
-        <div class="image-caption">Structure de l'automate : traitement séparé des commandes 'Suivant', 'Précédent' et des relâchements[cite: 273].</div>
+        <div class="image-caption">Structure de l'automate : traitement séparé des commandes 'Suivant', 'Précédent' et des relâchements.</div>
 
         <img src="exmplee boutonn.png" alt="Logique bouton" class="project-media">
-        <div class="image-caption">Exemple d'un état de l'automate gérant la mise à jour dynamique de l'UI et la progression de l'élève[cite: 278, 290].</div>
+        <div class="image-caption">Exemple d'un état de l'automate gérant la mise à jour dynamique de l'UI et la progression de l'élève.</div>
 
         <h2>4. Implémentation de la Session AR</h2>
         <p>
-            Le démarrage de l'expérience utilise un <i>Pawn</i> spécifique (MRPawn) qui initialise la session AR et active le tracking des mains dès le lancement de l'application[cite: 183, 185].
+            Le démarrage de l'expérience utilise un <i>Pawn</i> spécifique (MRPawn) qui initialise la session AR et active le tracking des mains dès le lancement de l'application.
         </p>
         <img src="start.png" alt="Blueprint de démarrage" class="project-media">
-        <div class="image-caption">Logique Blueprint : Lancement de la session de Réalité Mixte et gestion des commandes de sortie[cite: 561, 562].</div>
+        <div class="image-caption">Logique Blueprint : Lancement de la session de Réalité Mixte et gestion des commandes de sortie.</div>
 
         <h2>5. Tests et Validation sur Simulateur</h2>
         <p>
-            La validation finale a été effectuée sur le simulateur Cabri G2 de l'IUT de Cachan[cite: 294, 297]. L'utilisation du <i>Holographic Remoting</i> a permis d'ajuster en temps réel la position des hologrammes pour garantir une visibilité optimale des instruments réels[cite: 299, 300, 302].
+            La validation finale a été effectuée sur le simulateur Cabri G2 de l'IUT de Cachan. L'utilisation du <i>Holographic Remoting</i> a permis d'ajuster en temps réel la position des hologrammes pour garantir une visibilité optimale des instruments réels.
         </p>
-        <img src="simulateur.jpg" alt="Tests en simulateur" class="project-media">
-        <div class="image-caption">Mise en situation réelle : calibrage de la distance d'affichage et de l'ancrage spatial dans la cabine[cite: 301, 303].</div>
+        <img src="simulateur.png" alt="Tests en simulateur" class="project-media">
+        <div class="image-caption">Mise en situation réelle : calibrage de la distance d'affichage et de l'ancrage spatial dans la cabine.</div>
 
         <h2>6. Démonstration Finale</h2>
         <video class="project-media" controls muted loop playsinline>
             <source src="testok.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
-        <div class="image-caption">Vidéo de démonstration : Navigation fluide, retour visuel coloré et barres de progression dynamiques[cite: 20].</div>
+        <div class="image-caption">Vidéo de démonstration : Navigation fluide, retour visuel coloré et barres de progression dynamiques.</div>
 
         <h2>Conclusion & Perspectives</h2>
         <p>
-            Le projet <strong>HoloCheck</strong> apporte une réponse concrète aux enjeux de sécurité des apprentis pilotes en supprimant les ruptures d'attention[cite: 306, 307]. En remplaçant le support papier par une assistance active en Réalité Mixte, le système permet de maintenir les mains sur les commandes et le regard sur l'environnement, réduisant ainsi significativement la charge mentale[cite: 67, 307].
+            Le projet <strong>HoloCheck</strong> apporte une réponse concrète aux enjeux de sécurité des apprentis pilotes en supprimant les ruptures d'attention. En remplaçant le support papier par une assistance active en Réalité Mixte, le système permet de maintenir les mains sur les commandes et le regard sur l'environnement, réduisant ainsi significativement la charge mentale.
         </p>
         <p>
-            Cette réalisation m'a permis de maîtriser des outils industriels de pointe comme <strong>Unreal Engine 5</strong> et le <strong>MRTK</strong>, tout en intégrant la rigueur des procédures aéronautiques[cite: 308, 705].
+            Cette réalisation m'a permis de maîtriser des outils industriels de pointe comme <strong>Unreal Engine 5</strong> et le <strong>MRTK</strong>, tout en intégrant la rigueur des procédures aéronautiques.
         </p>
         
         <div class="feature-grid">
             <div class="feature-item">
                 <strong>🚀 Perspectives d'évolution</strong>
-                À l'avenir, le système pourrait devenir 100% autonome en intégrant de la <strong>reconnaissance d'image par IA</strong> pour valider automatiquement la position des interrupteurs dans le cockpit sans intervention humaine[cite: 310, 709].
+                À l'avenir, le système pourrait devenir 100% autonome en intégrant de la <strong>reconnaissance d'image par IA</strong> pour valider automatiquement la position des interrupteurs dans le cockpit sans intervention humaine.
             </div>
         </div>
 
