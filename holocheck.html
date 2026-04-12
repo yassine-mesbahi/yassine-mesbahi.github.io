@@ -5,95 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet HoloCheck - Yassine Mesbahi</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; padding: 40px 20px; line-height: 1.6; max-width: 900px; margin: auto; color: #333; background-color: #f4f7f6; }
-        .back-button { display: inline-block; margin-bottom: 30px; text-decoration: none; color: #3b82f6; font-weight: bold; border: 1px solid #3b82f6; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
-        .back-button:hover { background: #3b82f6; color: white; }
-        h1 { color: #1e3a8a; border-bottom: 4px solid #3b82f6; padding-bottom: 10px; font-size: 2.2em; }
-        h2 { color: #1e3a8a; margin-top: 40px; background: #eef2ff; padding: 10px; border-radius: 5px; }
-        .tech-stack { margin: 25px 0; display: flex; flex-wrap: wrap; gap: 10px; }
-        .tech-tag { background: #1e3a8a; color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 600; }
-        .project-media { width: 100%; border-radius: 12px; margin: 25px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.15); background: #000; }
-        .image-caption { text-align: center; font-size: 0.9em; color: #666; margin-top: -15px; margin-bottom: 25px; font-style: italic; }
-        .highlight { color: #1e3a8a; font-weight: bold; }
-        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-        .feature-item { background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ccc; font-style: italic; color: #666; }
+        /* Style identique aux autres pages du portfolio */
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        
+        .btn-back { display: inline-block; padding: 10px 20px; background: #3b82f6; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 20px; transition: 0.3s; }
+        .btn-back:hover { background: #1e3a8a; transform: translateX(-5px); }
+        
+        h1 { color: #1e3a8a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-top: 0; }
+        h2 { color: #1e3a8a; margin-top: 30px; font-size: 1.4em; }
+        
+        .tag-container { margin: 15px 0; }
+        .tag { background: #eef2ff; color: #4338ca; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: bold; margin-right: 5px; display: inline-block; }
+        
+        .project-media { width: 100%; border-radius: 8px; margin: 20px 0 10px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .image-caption { text-align: center; font-size: 0.9em; color: #65676b; margin-bottom: 20px; font-style: italic; }
+        
+        /* Grille de fonctionnalités */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .feature-item { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6; }
+        .feature-item strong { color: #1e3a8a; display: block; margin-bottom: 5px; }
+
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 0.9em; color: #65676b; text-align: center; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-button">← Retour au portfolio</a>
-    
-    <h1>HoloCheck : Checklist d'Hélicoptère en Réalité Mixte</h1>
-    
-    <div class="tech-stack">
-        <span class="tech-tag">Unreal Engine 5</span>
-        <span class="tech-tag">HoloLens 2</span>
-        <span class="tech-tag">Blueprints</span>
-        <span class="tech-tag">UX/UI Design</span>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+        
+        <h1>HoloCheck : Checklist en Réalité Mixte</h1>
+        
+        <div class="tag-container">
+            <span class="tag">Unreal Engine 5</span>
+            <span class="tag">HoloLens 2</span>
+            <span class="tag">Blueprints</span>
+            <span class="tag">UX/UI Design</span>
+        </div>
+
+        <p>
+            <strong>HoloCheck</strong> est une application de réalité mixte développée pour les pilotes de l'hélicoptère <strong>Guimbal Cabri G2</strong>. 
+            Le système dématérialise les checklists de vol via une interface interactive ancrée dans le champ de vision, permettant de valider les procédures de sécurité sans quitter l'environnement des yeux.
+        </p>
+
+        <h2>1. L'appareil de référence</h2>
+        <img src="Hélicoptère_Cabri_G2_-_F-HORS.jpg" alt="Hélicoptère Guimbal Cabri G2" class="project-media">
+        <div class="image-caption">Le Guimbal Cabri G2 : l'hélicoptère biplace utilisé pour l'étude ergonomique.</div>
+
+        <h2>2. Analyse du besoin et Problématique</h2>
+        <p>
+            Dans un cockpit exigu de 1,24 m de large, l'utilisation d'une checklist papier traditionnelle force le pilote à détourner le regard et à lâcher ponctuellement les commandes. 
+            HoloCheck supprime ces "ruptures d'attention" en projetant les informations essentielles directement dans le champ de vision.
+        </p>
+
+        <img src="exel.png" alt="Analyse de la checklist" class="project-media">
+        <div class="image-caption">Transformation de la documentation passive en une structure de données active.</div>
+
+        <h2>3. Conception Ergonomique</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>🎤 Commandes Vocales</strong>
+                Validation des étapes par la voix pour garder les mains sur les commandes.
+            </div>
+            <div class="feature-item">
+                <strong>🖐️ Hand Tracking</strong>
+                Interaction naturelle par gestes pour manipuler les hologrammes.
+            </div>
+            <div class="feature-item">
+                <strong>📊 Suivi Dynamique</strong>
+                Barre de progression en temps réel sur les 35 étapes de sécurité.
+            </div>
+        </div>
+
+        <img src="ui_design.png" alt="Design UI/UX" class="project-media">
+        <div class="image-caption">Interface optimisée pour maximiser le confort visuel et la sécurité.</div>
+
+        <h2>4. Développement technique (UE5)</h2>
+        <p>
+            La logique logicielle utilise le système de <strong>Blueprints</strong> (scripting visuel). Le flux de données est surveillé en temps réel pour garantir une réactivité parfaite de l'interface.
+        </p>
+        
+        <img src="blueprint_logic.png" alt="Logique Blueprint" class="project-media">
+        <div class="image-caption">Architecture logicielle gérant la validation séquentielle.</div>
+
+        <h2>5. Validation sur Simulateur</h2>
+        <p>
+            Les tests finaux sur le simulateur de l'IUT de Cachan ont permis d'ajuster l'ergonomie et de valider l'absence d'obstruction visuelle en conditions réelles.
+        </p>
+
+        <img src="simulateur.png" alt="Tests en simulateur" class="project-media">
+        <div class="image-caption">Mise en situation réelle sur le simulateur de l'IUT de Cachan.</div>
+
+        <h2>6. Démonstration Vidéo</h2>
+        <video class="project-media" controls muted loop playsinline>
+            <source src="testok.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        <div class="image-caption">Navigation interactive et retour visuel en temps réel.</div>
+
+        <div class="footer">
+            Projet réalisé par Yassine Mesbahi et Mamadou-cellou Diallo - BUT GEII (2025).
+        </div>
     </div>
 
-    <p>
-        <strong>HoloCheck</strong> est une application de réalité mixte développée pour les pilotes de l'hélicoptère <strong>Guimbal Cabri G2</strong>. 
-        Le système dématérialise les checklists de vol via une interface interactive ancrée dans le champ de vision, permettant de valider les procédures de sécurité sans quitter l'environnement des yeux.
-    </p>
-
-    <h2>1. L'appareil de référence</h2>
-    <img src="Hélicoptère_Cabri_G2_-_F-HORS.jpg" alt="Hélicoptère Guimbal Cabri G2" class="project-media">
-    <div class="image-caption">Le Guimbal Cabri G2 : l'hélicoptère biplace utilisé pour l'étude ergonomique.</div>
-
-    <h2>2. Analyse du besoin et Problématique</h2>
-    <p>
-        Dans un cockpit exigu de 1,24 m de large, l'utilisation d'une checklist papier traditionnelle force le pilote à détourner le regard et à lâcher ponctuellement les commandes. 
-        HoloCheck supprime ces "ruptures d'attention" en projetant les informations essentielles directement dans le champ de vision.
-    </p>
-
-    <img src="exel.png" alt="Analyse de la checklist" class="project-media">
-    <div class="image-caption">Transformation de la documentation passive en une structure de données active et segmentée.</div>
-
-    <h2>3. Conception Ergonomique et Interactions</h2>
-    <p>
-        L'interface a été optimisée pour réduire la charge cognitive et ne jamais obstruer les instruments réels.
-    </p>
-    <div class="feature-grid">
-        <div class="feature-item">
-            <strong>🎤 Commandes Vocales :</strong> Validation des étapes via la reconnaissance vocale pour rester concentré sur les commandes de vol.
-        </div>
-        <div class="feature-item">
-            <strong>🖐️ Hand Tracking :</strong> Interaction naturelle par geste de pincement (pinch) pour manipuler les hologrammes.
-        </div>
-        <div class="feature-item">
-            <strong>📊 Barres de Progression :</strong> Suivi dynamique de l'avancement des 35 étapes de sécurité.
-        </div>
-    </div>
-
-    <img src="ui_design.png" alt="Design UI/UX" class="project-media">
-    <div class="image-caption">Optimisation de l'interface pour maximiser le confort visuel et la sécurité du pilote.</div>
-
-    <h2>4. Développement Technique sous Unreal Engine 5</h2>
-    <p>
-        La logique logicielle utilise le système de <strong>Blueprints</strong> (scripting visuel). Le flux de données est surveillé en temps réel pour garantir une réactivité parfaite de l'interface.
-    </p>
-    
-    <img src="blueprint_logic.png" alt="Logique Blueprint" class="project-media">
-    <div class="image-caption">Architecture logicielle gérant la validation séquentielle et la mise à jour dynamique de l'interface.</div>
-
-    <h2>5. Validation sur Simulateur</h2>
-    <p>
-        Les tests finaux sur le simulateur de l'IUT de Cachan ont permis d'ajuster l'ergonomie et de valider l'absence d'obstruction visuelle en conditions réelles.
-    </p>
-
-    <img src="simulateur.png" alt="Tests en simulateur" class="project-media">
-    <div class="image-caption">Mise en situation réelle pour valider l'assistance tête haute sur le simulateur de l'IUT.</div>
-
-    <h2>6. Démonstration de l'interface</h2>
-    <video class="project-media" controls muted loop playsinline>
-        <source src="testok.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la lecture de vidéos.
-    </video>
-    <div class="image-caption">Vidéo de démonstration : navigation interactive et retour visuel.</div>
-
-    <div class="footer">
-        Projet réalisé par Yassine Mesbahi et Mamadou-cellou Diallo - BUT GEII (2025).
-    </div>
 </body>
 </html>
