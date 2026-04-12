@@ -28,9 +28,13 @@
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; transition: 0.3s; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-top-color: #ffd700; }
         .clickable { cursor: pointer; }
-        .card h3 { margin: 0; color: #1e3a8a; font-size: 1.2em; }
+        .card h3 { margin: 0; color: #1e3a8a; font-size: 1.2em; line-height: 1.2; }
         .date { color: #65676b; font-weight: bold; font-size: 0.85em; display: block; margin-bottom: 10px; }
         
+        /* En-tête des cartes avec Logo (Expériences) */
+        .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
+        .card-logo { width: 55px; height: 55px; object-fit: contain; border-radius: 4px; background: white; }
+
         /* Liste Formation (Style Polytech) */
         .formation-container { background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; }
         .list-item { display: flex; align-items: flex-start; gap: 25px; padding: 25px 0; border-bottom: 1px solid #e5e7eb; }
@@ -72,7 +76,6 @@
 
     <h2 class="section-title">Ma Formation</h2>
     <div class="formation-container">
-        
         <div class="list-item">
             <div class="list-logo-container">
                 <img src="ensea.png" alt="Logo ENSEA" class="list-logo">
@@ -83,7 +86,6 @@
                 <p class="list-details">Formation par apprentissage (3 ans) | ENSEA</p>
             </div>
         </div>
-
         <div class="list-item">
             <div class="list-logo-container">
                 <img src="cachan.png" alt="Logo Cachan" class="list-logo">
@@ -94,22 +96,35 @@
                 <p class="list-details">Spécialité Électronique Embarquée (Robotique) | IUT de Cachan - Université Paris-Saclay</p>
             </div>
         </div>
-
     </div>
 
     <h2 class="section-title">Expériences Professionnelles</h2>
     <div class="grid">
         <div class="card">
-            <h3>Stage Assistant Ingénieur - SECRE</h3>
-            <span class="date">Février 2026 - En cours</span>
+            <div class="card-header">
+                <img src="secre.jpg" alt="Logo SECRE" class="card-logo">
+                <h3>Stage Assistant Ingénieur</h3>
+            </div>
+            <span class="date">Février 2026 - En cours | SECRE</span>
             <p>Optimisation de production d'induits électriques et maintenance préventive.</p>
-            <div class="tag-container"><span class="tag">Production</span><span class="tag">Tests</span></div>
+            <div class="tag-container">
+                <span class="tag">Production</span>
+                <span class="tag">Amélioration Continue</span>
+            </div>
         </div>
+
         <div class="card">
-            <h3>Stage Robotique - Igus France</h3>
-            <span class="date">Juin 2025 - Juillet 2025</span>
-            <p>Intégration de bras robotiques et programmation de caméras de vision.</p>
-            <div class="tag-container"><span class="tag">Robotique</span><span class="tag">Vision 2D</span></div>
+            <div class="card-header">
+                <img src="igus.jpg" alt="Logo Igus" class="card-logo">
+                <h3>Stage Technicien Sédentaire Automatisation Junior</h3>
+            </div>
+            <span class="date">Juin 2025 - Juillet 2025 | Igus France</span>
+            <p>Stage en automatisation industrielle centré sur la programmation, l'optimisation et la maintenance de systèmes robotiques (bras articulés, portiques) destinés aux démonstrations clients. Les missions incluent l'intégration de solutions de vision artificielle et la résolution de dysfonctionnements matériels et logiciels.</p>
+            <div class="tag-container">
+                <span class="tag">Programmation Robotique</span>
+                <span class="tag">Câblage Industriel</span>
+                <span class="tag">Gestion de Projet</span>
+            </div>
         </div>
     </div>
 
