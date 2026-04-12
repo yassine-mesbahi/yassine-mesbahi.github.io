@@ -23,7 +23,7 @@
         /* Sections Titres */
         .section-title { font-size: 1.8em; color: #1e3a8a; border-bottom: 3px solid #3b82f6; display: inline-block; margin: 40px 0 20px 0; }
         
-        /* Grille par défaut (Expériences, Projets) */
+        /* Grille par défaut */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; transition: 0.3s; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-top-color: #ffd700; }
@@ -31,7 +31,7 @@
         .card h3 { margin: 0; color: #1e3a8a; font-size: 1.2em; line-height: 1.2; }
         .date { color: #65676b; font-weight: bold; font-size: 0.85em; display: block; margin-bottom: 10px; }
         
-        /* En-tête des cartes avec Logo (Expériences) */
+        /* En-tête des cartes avec Logo */
         .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
         .card-logo { width: 55px; height: 55px; object-fit: contain; border-radius: 4px; background: white; }
 
@@ -51,7 +51,6 @@
         .tag-container { margin-top: auto; padding-top: 15px; }
         .tag { background: #eef2ff; color: #4338ca; padding: 4px 10px; border-radius: 15px; font-size: 0.75em; font-weight: bold; margin-right: 5px; margin-bottom: 5px; display: inline-block; }
 
-        /* Responsive Mobile */
         @media (max-width: 600px) {
             .list-item { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
         }
@@ -120,7 +119,7 @@
                 <h3>Stage Technicien Sédentaire Automatisation Junior</h3>
             </div>
             <span class="date">Juin 2025 - Juillet 2025 | Igus France</span>
-            <p>Stage en automatisation industrielle centré sur la programmation, l'optimisation et la maintenance de systèmes robotiques (bras articulés, portiques) destinés aux démonstrations clients. Les missions incluent l'intégration de solutions de vision artificielle et la résolution de dysfonctionnements matériels et logiciels.</p>
+            <p>Stage centré sur la programmation, l'optimisation et la maintenance de systèmes robotiques. Intégration de solutions de vision artificielle et résolution de dysfonctionnements matériels et logiciels.</p>
             <div class="tag-container">
                 <span class="tag">Programmation Robotique</span>
                 <span class="tag">Câblage Industriel</span>
@@ -141,8 +140,12 @@
         <div class="card clickable" onclick="location.href='covapsy.html';">
             <h3>COVAPSY (Voiture Autonome)</h3>
             <span class="date">2024 - 2025 | Année 2 (BUT 2)</span>
-            <p>Navigation LiDAR et Bus CAN. 🏆 2ème place au concours national GEII.</p>
-            <div class="tag-container"><span class="tag">C++</span><span class="tag">LiDAR</span><span class="tag">STM32</span></div>
+            <p>Conception et programmation d'un véhicule autonome urbain. Implémentation d'algorithmes LiDAR en temps réel et multiplexage des données via Bus CAN. 🏆 2ème place au concours national GEII.</p>
+            <div class="tag-container">
+                <span class="tag">Systèmes Embarqués</span>
+                <span class="tag">Algorithmique</span>
+                <span class="tag">Bus CAN</span>
+            </div>
         </div>
         
         <div class="card clickable" onclick="location.href='gamel-trophy.html';">
