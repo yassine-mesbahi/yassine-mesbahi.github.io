@@ -23,19 +23,19 @@
         /* Sections Titres */
         .section-title { font-size: 1.8em; color: #1e3a8a; border-bottom: 3px solid #3b82f6; display: inline-block; margin: 40px 0 20px 0; }
         
-        /* Grille par défaut */
+        /* Grille par défaut (Expériences, Projets) */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; transition: 0.3s; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-top-color: #ffd700; }
         .clickable { cursor: pointer; }
-        .card h3 { margin: 0; color: #1e3a8a; font-size: 1.2em; line-height: 1.2; }
+        .card h3 { margin: 0; color: #1e3a8a; font-size: 1.1em; line-height: 1.2; }
         .date { color: #65676b; font-weight: bold; font-size: 0.85em; display: block; margin-bottom: 10px; }
         
-        /* En-tête des cartes avec Logo */
+        /* En-tête des cartes avec Logo (Expériences) */
         .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
         .card-logo { width: 55px; height: 55px; object-fit: contain; border-radius: 4px; background: white; }
 
-        /* Liste Formation */
+        /* Liste Formation (Style Polytech) */
         .formation-container { background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; }
         .list-item { display: flex; align-items: flex-start; gap: 25px; padding: 25px 0; border-bottom: 1px solid #e5e7eb; }
         .list-item:last-child { border-bottom: none; padding-bottom: 5px; }
@@ -44,13 +44,14 @@
         .list-logo { max-width: 100%; height: auto; max-height: 65px; object-fit: contain; }
         .list-content { display: flex; flex-direction: column; }
         .list-date { color: #3b82f6; font-weight: 700; font-size: 0.95em; margin-bottom: 4px; }
-        .list-title { color: #1e3a8a; font-size: 1.3em; font-weight: 700; margin: 0 0 6px 0; line-height: 1.3; }
+        .list-title { color: #1e3a8a; font-size: 1.25em; font-weight: 700; margin: 0 0 6px 0; line-height: 1.3; }
         .list-details { color: #65676b; font-size: 0.95em; margin: 0; }
 
         /* Tags */
         .tag-container { margin-top: auto; padding-top: 15px; }
         .tag { background: #eef2ff; color: #4338ca; padding: 4px 10px; border-radius: 15px; font-size: 0.75em; font-weight: bold; margin-right: 5px; margin-bottom: 5px; display: inline-block; }
 
+        /* Responsive Mobile */
         @media (max-width: 600px) {
             .list-item { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
         }
@@ -119,7 +120,7 @@
                 <h3>Stage Technicien Sédentaire Automatisation Junior</h3>
             </div>
             <span class="date">Juin 2025 - Juillet 2025 | Igus France</span>
-            <p>Stage centré sur la programmation, l'optimisation et la maintenance de systèmes robotiques. Intégration de solutions de vision artificielle et résolution de dysfonctionnements matériels et logiciels.</p>
+            <p>Stage centré sur la programmation, l'optimisation et la maintenance de systèmes robotiques (bras articulés, portiques). Les missions incluent l'intégration de solutions de vision artificielle et la résolution de dysfonctionnements matériels et logiciels.</p>
             <div class="tag-container">
                 <span class="tag">Programmation Robotique</span>
                 <span class="tag">Câblage Industriel</span>
@@ -134,25 +135,31 @@
             <h3>HoloCheck (Réalité Mixte)</h3>
             <span class="date">2025 | Année 3 (BUT 3)</span>
             <p>Checklists aéronautiques sur HoloLens 2 développées sous Unreal Engine 5 pour le Guimbal Cabri G2.</p>
-            <div class="tag-container"><span class="tag">UE5</span><span class="tag">HoloLens 2</span><span class="tag">UX Design</span></div>
+            <div class="tag-container">
+                <span class="tag">UE5</span>
+                <span class="tag">HoloLens 2</span>
+                <span class="tag">UX Design</span>
+            </div>
         </div>
-        
         <div class="card clickable" onclick="location.href='covapsy.html';">
             <h3>COVAPSY (Voiture Autonome)</h3>
             <span class="date">2024 - 2025 | Année 2 (BUT 2)</span>
-            <p>Conception et programmation d'un véhicule autonome. Implémentation d'algorithmes LiDAR en temps réel et multiplexage des données via Bus CAN.</p>
+            <p>Conception et programmation d'un véhicule autonome urbain. Implémentation d'algorithmes LiDAR en temps réel et multiplexage des données via Bus CAN. 🏆 2ème place au concours national GEII.</p>
             <div class="tag-container">
                 <span class="tag">Systèmes Embarqués</span>
                 <span class="tag">Algorithmique</span>
                 <span class="tag">Bus CAN</span>
             </div>
         </div>
-        
         <div class="card clickable" onclick="location.href='gamel-trophy.html';">
             <h3>Gamel Trophy (Robot Suiveur)</h3>
             <span class="date">2023 - 2024 | Année 1 (BUT 1)</span>
             <p>Conception complète de A à Z : Routage PCB sous KiCad, soudure CMS et programmation.</p>
-            <div class="tag-container"><span class="tag">KiCad</span><span class="tag">C++</span><span class="tag">PCB Design</span></div>
+            <div class="tag-container">
+                <span class="tag">KiCad</span>
+                <span class="tag">C++</span>
+                <span class="tag">PCB Design</span>
+            </div>
         </div>
     </div>
 </div>
