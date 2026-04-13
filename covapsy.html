@@ -43,66 +43,66 @@
         </div>
 
         <p>
-            Le projet <strong>COVAPSY</strong> consiste à concevoir un véhicule autonome à l'échelle 1/10 capable de naviguer sur un circuit sans intervention humaine. Ce projet, réalisé pour une compétition inter-écoles de l'Université Paris-Saclay, met en œuvre des systèmes embarqués complexes et une communication réseau robuste.
+            Le projet <strong>COVAPSY</strong> consiste à concevoir un véhicule autonome à l'échelle 1/10 capable de naviguer sur un circuit sans intervention humaine. Ce projet, réalisé pour une compétition de l'Université Paris-Saclay, met en œuvre des systèmes embarqués distribués et une communication réseau robuste.
         </p>
 
         <img src="voiture_complete.png" alt="Voiture autonome COVAPSY" class="project-media">
-        <div class="image-caption">Le prototype final équipé du LiDAR S2 et de l'unité de contrôle distribuée.</div>
+        <div class="image-caption">Prototype final intégrant le LiDAR S2 et l'architecture de contrôle à trois microcontrôleurs.</div>
 
-        <h2>1. Architecture Système et Communication CAN</h2>
+        <h2>1. Architecture Système et Réseau CAN</h2>
         <p>
-            Pour garantir une fiabilité industrielle, nous avons conçu une architecture distribuée utilisant trois microcontrôleurs <strong>STM32 Nucleo G431KB</strong> reliés par un <strong>Bus CAN</strong> :
+            L'intelligence du véhicule est répartie sur trois microcontrôleurs <strong>STM32 Nucleo G431KB</strong> communiquant via un <strong>Bus CAN</strong> pour assurer une réactivité en temps réel :
         </p>
         <div class="feature-grid">
             <div class="feature-item">
-                <strong>📡 Carte Communication & Sécurité</strong>
-                Elle gère le module <strong>Bluetooth</strong> (démarrage/arrêt via smartphone) et les <strong>capteurs de distance arrière</strong> pour la détection de collision imminente contre un mur.
+                <strong>📡 Carte Comm. & Capteurs</strong>
+                Elle gère le module <strong>Bluetooth</strong> pour le contrôle du démarrage/arrêt via smartphone et traite les données des <strong>capteurs de distance arrière</strong> pour la sécurité.
             </div>
             <div class="feature-item">
                 <strong>🧠 Carte Stratégie & LiDAR</strong>
-                Elle traite le flux de données du <strong>LiDAR S2</strong> et exécute les algorithmes de décision pour définir la trajectoire de la voiture en temps réel.
+                Le centre décisionnel. Elle acquiert les données du <strong>LiDAR S2</strong> et calcule les trajectoires d'évitement et de navigation.
             </div>
             <div class="feature-item">
                 <strong>⚙️ Carte Actionneurs</strong>
-                Elle reçoit les ordres via le Bus CAN pour piloter le hacheur (<strong>moteur CC</strong>), le servomoteur <strong>Herkulex</strong> et traite le retour de la <strong>fourche optique</strong> pour l'odométrie.
+                Elle reçoit les ordres de conduite pour piloter le hacheur (<strong>moteur CC</strong>), le servomoteur <strong>Herkulex</strong> et traite le signal de la <strong>fourche optique</strong> pour le retour de vitesse.
             </div>
         </div>
         <img src="schéma_synoptique.jpg" alt="Schéma synoptique de l'architecture" class="project-media">
-        <div class="image-caption">Synoptique de l'architecture : répartition des tâches entre les trois unités G431KB.</div>
+        <div class="image-caption">Synoptique de l'architecture électronique distribuée.</div>
 
-        <h2>2. Perception : Implémentation du LiDAR</h2>
+        <h2>2. Perception en Temps Réel (LiDAR)</h2>
         <p>
-            La localisation repose sur un LiDAR balayant à 360°. Les données sont récupérées via <strong>UART avec DMA</strong> pour ne pas ralentir le processeur, permettant un rafraîchissement rapide de la cartographie locale des bordures.
+            La localisation de la voiture repose sur un LiDAR à balayage laser. Les données sont extraites via <strong>UART avec DMA</strong>, permettant un traitement fluide des obstacles sans interrompre les calculs de trajectoire.
         </p>
         <video class="project-media" controls muted loop playsinline>
             <source src="lidar_test.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
-        <div class="image-caption">Test de perception : analyse du nuage de points LiDAR pour la détection d'obstacles.</div>
+        <div class="image-caption">Visualisation du flux de données LiDAR utilisé pour la détection des bordures.</div>
 
-        <h2>3. Simulation et Stratégie (Webots)</h2>
+        <h2>3. Validation en Simulation (Webots)</h2>
         <p>
-            Avant de passer sur piste, nous avons validé notre stratégie de conduite sur le simulateur <strong>Webots</strong>. Cela nous a permis d'affiner l'asservissement de direction et d'éviter les collisions matérielles lors de la phase de développement.
+            Avant l'implémentation physique, nous avons validé l'intégralité de la stratégie de conduite sous <strong>Webots</strong>. Cette étape a permis de tester nos asservissements de direction de manière sécurisée.
         </p>
-        <img src="webbots.png" alt="Simulation Webots" class="project-media">
-        <div class="image-caption">Environnement virtuel Webots utilisé pour calibrer les paramètres de navigation autonome.</div>
+        <video class="project-media" controls muted loop playsinline>
+            <source src="webots.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        <div class="image-caption">Démonstration de l'algorithme de conduite autonome en environnement virtuel.</div>
 
-        <h2>4. Démonstration Finale en Course</h2>
+        <h2>4. Performance en Compétition</h2>
         <p>
-            Le projet a été validé lors de la compétition à l'ENS Paris-Saclay, avec une performance notable en qualifications.
+            La robustesse de notre solution a été prouvée lors des phases de qualification où nous avons terminé à la <strong>1ère place de notre groupe</strong>.
         </p>
         <video class="project-media" controls muted loop playsinline>
             <source src="course_qualif.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
-        <div class="image-caption">Vidéo de la course : la voiture termine 1ère de son groupe de qualification.</div>
+        <div class="image-caption">Vidéo de la course : navigation fluide de la voiture autonome sur le circuit de l'ENS Paris-Saclay.</div>
 
         <h2>Conclusion</h2>
         <p>
-            Le projet s'est conclu par une <strong>6ème place sur 15 équipes</strong>. Au-delà du classement, cette expérience a été fondamentale pour ma compréhension des <strong>systèmes embarqués temps réel</strong> et du <strong>multiplexage de données</strong> via Bus CAN.
-        </p>
-        <p>
-            J'ai appris à optimiser le code en langage C pour garantir la sécurité d'un système mobile tout en collaborant efficacement au sein d'une équipe technique multidisciplinaire.
+            Le projet s'est terminé par une <strong>6ème place sur 15 équipes</strong>. Cette expérience a été fondamentale pour ma maîtrise des <strong>systèmes embarqués temps réel</strong> et du <strong>multiplexage de données</strong> via Bus CAN. Elle a renforcé ma capacité à optimiser des logiciels bas-niveau (Langage C) pour des applications de robotique mobile.
         </p>
 
         <div class="footer">
