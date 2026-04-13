@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage igus France - Yassine Mesbahi</title>
+    <title>Stage SECRE - Yassine Mesbahi</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
         .container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
@@ -23,35 +23,6 @@
         
         .feature-item { background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 25px; }
 
-        /* GRILLE DES ROBOTS RÉPARÉE AVEC OBJECT-FIT */
-        .robot-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 15px; 
-            margin: 25px 0; 
-            align-items: stretch; 
-        }
-        .robot-card { 
-            background: white; 
-            padding: 15px; 
-            border-radius: 8px; 
-            border: 1px solid #e5e7eb;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; 
-            align-items: center;     
-            text-align: center;
-        }
-        .robot-card img { 
-            width: 100%; 
-            height: 250px; 
-            object-fit: contain; 
-            border-radius: 5px; 
-            margin-bottom: 15px; 
-        }
-        .robot-card p { font-size: 0.9em; font-weight: bold; color: #333; margin: 0; }
-
-        /* Style pour garder Gras : Texte sur la même ligne */
         .inline-text { margin: 10px 0; background: white; padding: 10px; border-radius: 5px; border-left: 3px solid #3b82f6;}
         .inline-text strong { color: #1e3a8a; }
 
@@ -64,90 +35,67 @@
         <a href="index.html" class="btn-back">← Retour au Portfolio</a>
         
         <h1>
-            <span>Stage Ingénieur : Robotique & Low-Cost Automation</span>
-            <img src="igus.jpg" alt="Logo igus" style="height: 50px; object-fit: contain;">
-        </h1>
+            <span>Stage Ingénieur : Instrumentation & Industrialisation</span>
+            </h1>
         
         <div class="tag-container">
-            <span class="tag">Programmation Robotique</span>
-            <span class="tag">Câblage Industriel</span>
-            <span class="tag">Gestion de Projet</span>
+            <span class="tag">Amélioration Continue</span>
+            <span class="tag">Analyse Fréquentielle</span>
+            <span class="tag">Contrôle Qualité</span>
         </div>
 
         <p>
-            Stage de 10 semaines réalisé chez <strong>igus France</strong> au sein du département <em>Low-Cost Automation</em>. Ma mission a porté sur la préparation de démonstrateurs technologiques et le développement d'interfaces de contrôle simplifiées.
+            Stage réalisé chez <strong>Sécré Composants Électroniques (SCE)</strong> au sein du service Méthodes. Mon objectif a été d'optimiser les lignes de production de composants de haute précision (aéronautique/défense) et de programmer de nouvelles solutions de contrôle métrologique.
         </p>
 
-        <h2>🛠️ Mission 1 : Intégration matérielle & Interfaces de contrôle</h2>
+        <h2>🏭 Mission 1 : Industrialisation et résolution de défaillances</h2>
         <p>
-            Cette première partie de mon stage s'est concentrée sur la compréhension et la manipulation de l'architecture physique des systèmes robotiques.
+            Intervention sur les lignes de fabrication d'induits électriques suite à des retours clients critiques (surconsommation anormale sur banc de test).
         </p>
 
         <div class="feature-item">
-            <h3 style="margin-top: 0;">⚙️ L'Armoire de Contrôle : Le cœur du système</h3>
+            <h3 style="margin-top: 0;">🔧 Analyse du défaut et action corrective</h3>
             <p>
-                Pour fonctionner, chaque robot est relié à une armoire de commande spécifique. J'ai travaillé sur la maintenance et le câblage de ces éléments critiques :
+                L'investigation en atelier a permis d'isoler la cause racine : un décalage manuel des fils sur le collecteur lors de l'assemblage, perturbant directement le rendement magnétique du moteur.
             </p>
-            <ul style="list-style-type: none; padding-left: 0;">
-                <li><strong>- Alimentation :</strong> Gestion de la puissance électrique du système.</li>
-                <li><strong>- Modules Moteur & Encodeur :</strong> Pilotage précis des axes et retour d'information sur la position.</li>
-                <li><strong>- Automate (Contrôleur) :</strong> Unité de calcul centrale (basée sur une architecture Raspberry Pi industrielle) pilotant l'ensemble via le logiciel iRC.</li>
+            <p class="inline-text"><strong>Solution mise en place :</strong> Instauration d'un point de contrôle intermédiaire. Vérification visuelle stricte de la mise au collecteur avant l'étape de soudure définitive.</p>
+        </div>
+
+        <div class="feature-item">
+            <h3 style="margin-top: 0;">📝 Standardisation (Rédaction des DFI)</h3>
+            <p>
+                Pour éviter toute récidive, j'ai refondu les Dossiers de Fabrication et d'Instruction (DFI). Ces documents techniques, validés avec les opérateurs, intègrent désormais des schémas de référence clairs et des étapes de validation obligatoires.
+            </p>
+            
+            <img src="Processus d'assistance.png" alt="Processus d'assistance SCE" class="project-media" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+            <div class="image-caption">Logigramme d'intégration du nouveau contrôle de conformité dans le flux de production.</div>
+        </div>
+
+        <h2>📡 Mission 2 : Programmation d'un Analyseur de Spectre</h2>
+        <p>
+            Suite à la panne d'un équipement obsolète, j'ai été chargé d'intégrer et de programmer un nouvel analyseur de spectre pour valider la conformité des <strong>transformateurs 1553</strong> (composants de transmission de données pour l'aéronautique militaire).
+        </p>
+
+        <div class="feature-item">
+            <h3 style="margin-top: 0;">📊 Analyse fréquentielle et tests de bande passante</h3>
+            <p>
+                L'enjeu technique était de garantir que le transformateur laisse passer les fréquences nécessaires sans déformer le signal, en respectant la norme militaire MIL-STD-1553.
+            </p>
+            <ul style="padding-left: 20px; line-height: 1.8;">
+                <li>Recherche et validation d'un nouvel équipement de mesure répondant aux mêmes exigences de précision que l'ancien modèle.</li>
+                <li>Actualisation du programme de test et adaptation de la procédure de mesure.</li>
+                <li>Validation de la nouvelle séquence pour permettre au service Qualité de libérer les lots de pièces en attente.</li>
             </ul>
-            <img src="armoire_controle.jpg" alt="Intérieur de l'armoire de commande igus" class="project-media">
-            <div class="image-caption">Armoire de contrôle montrant les modules de puissance et l'unité de commande.</div>
         </div>
-
-        <div class="feature-item">
-            <h3 style="margin-top: 0;">⚡ Développement d'un boitier de contrôle</h3>
-            <p>Conception d'un boîtier de commande physique pour simplifier l'utilisation du robot par les clients. J'ai géré le câblage et l'intégration des fonctions suivantes :</p>
-            <p style="padding-left: 20px; line-height: 1.8;">
-                - Allumer / éteindre le robot.<br>
-                - Activation / désactivation des moteurs.<br>
-                - Lancement du programme de démonstration.<br>
-                - Retour aux points zéros.
-            </p>
-            <img src="control_box.jpg" alt="Control Box" class="project-media" style="width: 100%; max-width: 450px; display: block; margin: 20px auto;">
-            <div class="image-caption">Interface simplifiée pour un pilotage direct sans ordinateur.</div>
-        </div>
-
-        <h2>🤖 Mission 2 : Études de faisabilité client (CTA)</h2>
-        <p>En support direct de mon maître de stage, j'ai géré le cycle complet des études de faisabilité pour valider l'intégration de nos robots dans les processus industriels des clients.</p>
-
-        <div class="feature-item">
-            <h3 style="margin-top: 0;">🎯 Démarche de projet</h3>
-            <p class="inline-text"><strong>Analyse :</strong> Réception de l'idée ou du besoin client transmis par le tuteur.</p>
-            <p class="inline-text"><strong>Réalisation :</strong> Choix du robot, montage des différents outils (au besoin ventouse, pince, etc.) et programmation de la séquence voulue.</p>
-            <p class="inline-text"><strong>Validation :</strong> Envoi d'une vidéo de démonstration au client pour confirmer que la solution technique répond parfaitement à ses attentes.</p>
-        </div>
-
-        <h3>🦾 Les systèmes robotiques programmés</h3>
-        <div class="robot-grid">
-            <div class="robot-card">
-                <img src="robot_rebel.jpg" alt="Robot ReBeL">
-                <p>Cobot 6 axes ReBeL</p>
-            </div>
-            <div class="robot-card">
-                <img src="robot_delta.jpg" alt="Robot Delta">
-                <p>Robot Delta (Pick & Place)</p>
-            </div>
-            <div class="robot-card">
-                <img src="portique_3_axes.jpg" alt="Portique linéaire">
-                <p>Portique linéaire 3 axes</p>
-            </div>
-        </div>
-
-        <h3>📊 Logigramme et flux de production</h3>
-        <img src="Processus d'assistance.png" alt="Processus d'assistance SCE" class="project-media" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-        <div class="image-caption">Logigramme du flux de production et des processus de contrôle interne lors des études client.</div>
 
         <h2>Conclusion</h2>
         <p>
-            Ce stage chez igus France m'a permis d'approfondir mes connaissances en <strong>GEII</strong> en manipulant du matériel industriel de pointe. De l'armoire de commande à la programmation de trajectoires, j'ai maîtrisé l'ensemble de la chaîne de valeur de l'automatisation.
+            Cette expérience technique m'a permis de développer une double compétence : la gestion de l'industrialisation dans un secteur où la tolérance à l'erreur est nulle, et la maîtrise de l'instrumentation de mesure haute fréquence.
         </p>
 
         <div class="footer">
-            <strong>Entreprise :</strong> igus France (Fresnes)<br>
-            <strong>Période :</strong> Juin - Juillet 2025
+            <strong>Entreprise :</strong> Sécré Composants Électroniques<br>
+            <strong>Service :</strong> Méthodes et Instrumentation
         </div>
     </div>
 
