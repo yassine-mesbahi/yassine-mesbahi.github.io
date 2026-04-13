@@ -12,6 +12,8 @@
         .btn-back:hover { background: #1e3a8a; transform: translateX(-5px); }
         
         h1 { color: #1e3a8a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-top: 0; display: flex; align-items: center; justify-content: space-between; }
+        h1 img { height: 50px; object-fit: contain; }
+        
         h2 { color: #1e3a8a; margin-top: 40px; font-size: 1.6em; border-left: 5px solid #3b82f6; padding-left: 15px; }
         h3 { color: #1e3a8a; margin-top: 25px; }
         
@@ -36,7 +38,8 @@
         
         <h1>
             <span>Stage Ingénieur : Instrumentation & Industrialisation</span>
-            </h1>
+            <img src="secre.png" alt="Logo SECRE">
+        </h1>
         
         <div class="tag-container">
             <span class="tag">Amélioration Continue</span>
@@ -45,52 +48,55 @@
         </div>
 
         <p>
-            Stage réalisé chez <strong>Sécré Composants Électroniques (SCE)</strong> au sein du service Méthodes. Mon objectif a été d'optimiser les lignes de production de composants de haute précision (aéronautique/défense) et de programmer de nouvelles solutions de contrôle métrologique.
+            Stage réalisé chez <strong>Sécré Composants Électroniques (SCE)</strong> au sein du service Méthodes. Mon objectif a été d'optimiser les lignes de production de composants critiques et de programmer de nouvelles solutions de contrôle métrologique.
         </p>
 
-        <h2>🏭 Mission 1 : Industrialisation et résolution de défaillances</h2>
+        <h2>🏭 Mission 1 : Industrialisation et optimisation de la ligne Induits</h2>
         <p>
-            Intervention sur les lignes de fabrication d'induits électriques suite à des retours clients critiques (surconsommation anormale sur banc de test).
+            Intervention sur la fabrication d'induits électriques suite à des non-conformités détectées (surconsommation sur banc de test).
         </p>
 
         <div class="feature-item">
-            <h3 style="margin-top: 0;">🔧 Analyse du défaut et action corrective</h3>
+            <h3 style="margin-top: 0;">📉 Cartographie de la ligne de fabrication</h3>
             <p>
-                L'investigation en atelier a permis d'isoler la cause racine : un décalage manuel des fils sur le collecteur lors de l'assemblage, perturbant directement le rendement magnétique du moteur.
+                Pour comprendre l'origine des défauts, j'ai modélisé l'intégralité du flux de production. Ce logigramme permet de visualiser les étapes critiques, du bobinage à la soudure finale.
             </p>
-            <p class="inline-text"><strong>Solution mise en place :</strong> Instauration d'un point de contrôle intermédiaire. Vérification visuelle stricte de la mise au collecteur avant l'étape de soudure définitive.</p>
+            
+            <img src="Processus d'assistance.png" alt="Logigramme ligne induit" class="project-media" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+            <div class="image-caption">Logigramme expliquant les étapes de la ligne de fabrication de l'induit et l'intégration du point de contrôle.</div>
         </div>
 
         <div class="feature-item">
-            <h3 style="margin-top: 0;">📝 Standardisation (Rédaction des DFI)</h3>
+            <h3 style="margin-top: 0;">🔧 Analyse du défaut et mise à jour des DFI</h3>
             <p>
-                Pour éviter toute récidive, j'ai refondu les Dossiers de Fabrication et d'Instruction (DFI). Ces documents techniques, validés avec les opérateurs, intègrent désormais des schémas de référence clairs et des étapes de validation obligatoires.
+                L'origine du problème venait d'un décalage manuel des fils sur le collecteur. 
             </p>
-            
-            <img src="Processus d'assistance.png" alt="Processus d'assistance SCE" class="project-media" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-            <div class="image-caption">Logigramme d'intégration du nouveau contrôle de conformité dans le flux de production.</div>
+            <ul style="padding-left: 20px; line-height: 1.8;">
+                <li><strong>Action corrective :</strong> Instauration d'un contrôle intermédiaire visuel obligatoire.</li>
+                <li><strong>Standardisation :</strong> Réécriture complète des Dossiers de Fabrication et d'Instruction (DFI) pour fournir aux opérateurs des consignes de montage sans ambiguïté.</li>
+            </ul>
         </div>
 
         <h2>📡 Mission 2 : Programmation d'un Analyseur de Spectre</h2>
         <p>
-            Suite à la panne d'un équipement obsolète, j'ai été chargé d'intégrer et de programmer un nouvel analyseur de spectre pour valider la conformité des <strong>transformateurs 1553</strong> (composants de transmission de données pour l'aéronautique militaire).
+            Remplacement d'un équipement de mesure obsolète pour valider la conformité des <strong>transformateurs 1553</strong> (standard militaire pour bus de données aéronautiques).
         </p>
 
         <div class="feature-item">
-            <h3 style="margin-top: 0;">📊 Analyse fréquentielle et tests de bande passante</h3>
+            <h3 style="margin-top: 0;">📊 Analyse fréquentielle (Bande passante)</h3>
             <p>
-                L'enjeu technique était de garantir que le transformateur laisse passer les fréquences nécessaires sans déformer le signal, en respectant la norme militaire MIL-STD-1553.
+                L'objectif était de garantir l'intégrité du signal haute fréquence en respectant la norme MIL-STD-1553.
             </p>
             <ul style="padding-left: 20px; line-height: 1.8;">
-                <li>Recherche et validation d'un nouvel équipement de mesure répondant aux mêmes exigences de précision que l'ancien modèle.</li>
-                <li>Actualisation du programme de test et adaptation de la procédure de mesure.</li>
-                <li>Validation de la nouvelle séquence pour permettre au service Qualité de libérer les lots de pièces en attente.</li>
+                <li>Sélection d'un nouvel analyseur avec des caractéristiques métrologiques équivalentes.</li>
+                <li>Programmation de la nouvelle séquence de test automatisée.</li>
+                <li>Validation de la procédure pour la libération des lots de production.</li>
             </ul>
         </div>
 
         <h2>Conclusion</h2>
         <p>
-            Cette expérience technique m'a permis de développer une double compétence : la gestion de l'industrialisation dans un secteur où la tolérance à l'erreur est nulle, et la maîtrise de l'instrumentation de mesure haute fréquence.
+            Ce stage m'a permis de lier l'analyse de terrain (optimisation de ligne) à la haute technologie (instrumentation fréquentielle), renforçant ma capacité à garantir la qualité dans un environnement industriel exigeant.
         </p>
 
         <div class="footer">
