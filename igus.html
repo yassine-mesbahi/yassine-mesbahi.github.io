@@ -20,8 +20,14 @@
         .project-media { width: 100%; border-radius: 8px; margin: 20px 0 10px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .image-caption { text-align: center; font-size: 0.95em; color: #65676b; margin-bottom: 30px; font-style: italic; }
         
-/* GRILLE DES ROBOTS AVEC CENTRAGE AUTOMATIQUE */
-        .robot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
+/* GRILLE DES ROBOTS RÉPARÉE AVEC OBJECT-FIT */
+        .robot-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px; 
+            margin: 25px 0; 
+            align-items: stretch; /* Force les 3 cases à avoir la même hauteur totale */
+        }
         .robot-card { 
             background: #f8f9fa; 
             padding: 15px; 
@@ -29,11 +35,17 @@
             border: 1px solid #e5e7eb;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centre verticalement */
-            align-items: center;     /* Centre horizontalement */
+            justify-content: space-between; /* Garde l'image en haut et le texte en bas */
+            align-items: center;     
             text-align: center;
         }
-        .robot-card img { height: auto; border-radius: 5px; margin-bottom: 10px; }
+        .robot-card img { 
+            width: 100%; 
+            height: 250px; /* HAUTEUR FIXE POUR TOUTES LES IMAGES (ajustable) */
+            object-fit: contain; /* L'image s'adapte parfaitement sans être coupée ni écrasée */
+            border-radius: 5px; 
+            margin-bottom: 15px; 
+        }
         .robot-card p { font-size: 0.9em; font-weight: bold; color: #333; margin: 0; }
 
         /* Style pour garder Gras : Texte sur la même ligne */
