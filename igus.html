@@ -3,29 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage Igus - Yassine Mesbahi</title>
+    <title>Stage igus France - Yassine Mesbahi</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .btn-back { display: inline-block; padding: 10px 20px; background: #3b82f6; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 20px; }
-        h1 { color: #1e3a8a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; }
-        .tag { background: #eef2ff; color: #4338ca; padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: bold; margin-right: 5px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        
+        .btn-back { display: inline-block; padding: 10px 20px; background: #3b82f6; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 25px; transition: 0.3s; }
+        .btn-back:hover { background: #1e3a8a; transform: translateX(-5px); }
+        
+        h1 { color: #1e3a8a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-top: 0; }
+        h2 { color: #1e3a8a; margin-top: 40px; font-size: 1.6em; border-left: 5px solid #3b82f6; padding-left: 15px; }
+        
+        .tag-container { margin: 15px 0; }
+        .tag { background: #eef2ff; color: #4338ca; padding: 5px 12px; border-radius: 15px; font-size: 0.85em; font-weight: bold; margin-right: 5px; display: inline-block; }
+        
+        .project-media { width: 100%; border-radius: 8px; margin: 20px 0 10px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .image-caption { text-align: center; font-size: 0.95em; color: #65676b; margin-bottom: 30px; font-style: italic; }
+        
+        .feature-grid { display: flex; flex-direction: column; gap: 20px; margin: 25px 0; }
+        .feature-item { background: #f8f9fa; padding: 20px; border-radius: 8px; border-top: 4px solid #3b82f6; }
+        .feature-item strong { color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1em; }
+
+        .footer { margin-top: 50px; padding: 20px; border-top: 1px solid #e5e7eb; font-size: 0.9em; color: #65676b; text-align: center; }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <a href="index.html" class="btn-back">← Retour à l'accueil</a>
-        <h1>Stage Technicien Automatisation - Igus France</h1>
-        <p><strong>Période :</strong> Juin 2025 - Juillet 2025</p>
-        <div><span class="tag">Robotique</span><span class="tag">Câblage</span><span class="tag">Bus CAN</span></div>
+        <a href="index.html" class="btn-back">← Retour au Portfolio</a>
         
-        <h2>Réalisations</h2>
+        <h1>Stage Ingénieur : Robotique & Maintenance Industrielle</h1>
+        
+        <div class="tag-container">
+            <span class="tag">Robotique LCA</span>
+            <span class="tag">Maintenance 4.0</span>
+            <span class="tag">igus ReBeL</span>
+            <span class="tag">Génie Électrique</span>
+        </div>
+
+        <p>
+            Au cours de mon stage de 10 semaines chez <strong>igus France</strong>, j'ai intégré le département <em>Low-Cost Automation</em>. Ma mission principale portait sur l'amélioration de la maintenance et des performances des systèmes robotiques, notamment sur le cobot 6 axes <strong>ReBeL</strong>.
+        </p>
+
+        <img src="rebel_robot.png" alt="Robot igus ReBeL" class="project-media">
+        <div class="image-caption">Le cobot ReBeL d'igus, au cœur de mes missions de maintenance et d'optimisation.</div>
+
+        <h2>1. Robotique et Automatisation Low-Cost</h2>
+        <p>
+            J'ai travaillé sur la standardisation des procédures de maintenance pour les robots collaboratifs. Cela impliquait une compréhension profonde de la cinématique et des logiciels de contrôle.
+        </p>
+        
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>🤖 Maintenance du Cobot ReBeL</strong>
+                <p>Analyse des points d'usure, calibration des articulations et mise à jour des systèmes de contrôle via le logiciel <strong>iRC (igus Robot Control)</strong>.</p>
+            </div>
+            <div class="feature-item">
+                <strong>📦 Standardisation des Kits de Maintenance</strong>
+                <p>Création de listes de pièces critiques (Spare Parts) pour réduire les temps d'arrêt machine (MTTR) chez les clients industriels.</p>
+            </div>
+        </div>
+
+        <h2>2. Développement d'une Control Box (Banc de Test)</h2>
+        <p>
+            Pour répondre à un besoin interne de fiabilité, j'ai participé à la conception d'une <strong>Control Box</strong> dédiée aux tests d'endurance des câbles <em>Chainflex</em> et des chaînes porte-câbles.
+        </p>
         <ul>
-            <li>Programmation de bras robotiques (Rebel, SCARA).</li>
-            <li>Câblage de boîtiers de commande D1 et intégration de capteurs.</li>
-            <li>Configuration de systèmes de Vision Industrielle (Vision2D).</li>
-            <li>Support technique et démonstrations pour clients industriels.</li>
+            <li><strong>Conception Électrique :</strong> Étude du schéma de câblage pour automatiser les cycles de mouvement.</li>
+            <li><strong>Tests de Performance :</strong> Analyse de la tenue des polymères et des câbles sous contraintes de torsion et de flexion répétées.</li>
         </ul>
+
+        <img src="control_box.png" alt="Control Box igus" class="project-media">
+        <div class="image-caption">Conception de l'unité de contrôle pour les bancs de tests automatisés.</div>
+
+        <h2>3. Documentation et Support Technique</h2>
+        <p>
+            Une part importante de mon travail a consisté à rendre la technologie accessible via la création de supports techniques précis.
+        </p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>📝 Guides de Maintenance</strong>
+                <p>Rédaction de manuels d'utilisation et de guides de dépannage illustrés pour les techniciens de maintenance.</p>
+            </div>
+            <div class="feature-item">
+                <strong>🌍 Environnement International</strong>
+                <p>Utilisation quotidienne de l'anglais technique pour la documentation et les échanges sur les standards du groupe igus GmbH.</p>
+            </div>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>
+            Ce stage chez igus France m'a permis d'appliquer mes connaissances en <strong>GEII</strong> dans un environnement industriel de pointe. J'y ai développé une vision pragmatique de la robotique : l'innovation n'est efficace que si elle est maintenable et fiable sur le long terme.
+        </p>
+
+        <div class="footer">
+            <strong>Entreprise :</strong> igus France (Fresnes)<br>
+            <strong>Tuteur :</strong> [Nom de ton tuteur] | <strong>Période :</strong> Avril - Juin 2025
+        </div>
     </div>
+
 </body>
 </html>
