@@ -36,14 +36,14 @@
         
         <div class="tag-container">
             <span class="tag">Langage C</span>
-            <span class="tag">STM32 (Nucleo G431 & F303)</span>
+            <span class="tag">STM32 (Nucleo G431KB)</span>
             <span class="tag">Bus CAN</span>
             <span class="tag">LiDAR S2</span>
             <span class="tag">Webots</span>
         </div>
 
         <p>
-            Le projet <strong>COVAPSY</strong> est une compétition de robotique organisée au sein de l'Université Paris-Saclay. L'objectif : concevoir un véhicule capable de parcourir un circuit de manière autonome. Ce projet combine électronique de puissance, traitement de données laser et algorithmique de navigation.
+            Le projet <strong>COVAPSY</strong> s'inscrit dans le cadre d'une compétition de robotique inter-écoles organisée par l'Université Paris-Saclay. L'objectif était de concevoir un véhicule à l'échelle 1/10 capable de parcourir un circuit délimité de manière totalement autonome. Ce projet a nécessité l'intégration de compétences en électronique, en traitement de données de capteurs et en algorithmique de navigation.
         </p>
 
         <h2>Démonstration en Course</h2>
@@ -51,45 +51,52 @@
             <source src="course_qualif.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
-        <div class="image-caption">Course de qualification : performance en temps réel (1ère place de groupe).</div>
+        <div class="image-caption">Course de qualification : performance en temps réel de la voiture autonome.</div>
 
         <h2>1. Architecture Système et Communication</h2>
         <p>
-            Pour garantir une réactivité optimale, nous avons mis en place une architecture bi-processeurs communiquant via un <strong>Bus CAN</strong> (protocole robuste utilisé dans l'automobile réelle) :
+            Pour assurer le fonctionnement autonome et réactif du véhicule, nous avons développé une architecture distribuée composée de trois cartes multi-périphériques, chacune dotée d'un microcontrôleur <strong>Nucleo G431KB</strong>. Ces cartes communiquent entre elles via un <strong>Bus CAN</strong>, un standard industriel robuste, assurant la transmission fiable des données et des commandes.
         </p>
         <div class="feature-grid">
             <div class="feature-item">
-                <strong>🧠 Unité de Décision (Master)</strong>
-                Nucleo G431KB. Elle traite les données du <strong>LiDAR S2</strong> via <strong>UART/DMA</strong> pour cartographier les bordures de piste et calculer la trajectoire.
+                <strong>🧠 Unité de Stratégie & LiDAR</strong>
+                Cette carte centrale traite les données du <strong>LiDAR S2</strong> via <strong>UART/DMA</strong> pour déterminer la distance aux bordures et exécute l'algorithme de navigation pour calculer la trajectoire optimale.
             </div>
             <div class="feature-item">
-                <strong>⚙️ Unité d'Action (Slave)</strong>
-                Nucleo F303K8. Elle reçoit les ordres de direction et de vitesse pour piloter le hacheur <strong>Pololu G2</strong> et le servomoteur <strong>Herkulex</strong>.
+                <strong>⚙️ Unité d'Actionneurs</strong>
+                Cette carte reçoit les ordres de direction et de vitesse via le Bus CAN et pilote les actionneurs : un hacheur <strong>Pololu G2</strong> pour le moteur CC de propulsion et un servomoteur <strong>Herkulex DRS-0101</strong> pour la direction.
+            </div>
+            <div class="feature-item">
+                <strong>📡 Unité de Capteurs & Communication</strong>
+                Dédiée à la gestion des capteurs d'obstacles arrière (<strong>TOFSense</strong>) pour sécuriser les manœuvres de recul, et à l'interface <strong>Bluetooth</strong> permettant le contrôle à distance (démarrage/arrêt) via smartphone.
             </div>
         </div>
-        <img src="voiture_vue_dessus.png" alt="Architecture matérielle" class="project-media">
-        <div class="image-caption">Vue détaillée de la base roulante et de l'intégration des microcontrôleurs.</div>
+        <img src="schéma_synoptique.jpg" alt="Schéma synoptique de l'architecture" class="project-media">
+        <div class="image-caption">Schéma synoptique détaillant l'architecture distribuée avec les trois microcontrôleurs G431KB et les flux de communication.</div>
 
         <h2>2. Simulation et Stratégie (Webots)</h2>
         <p>
-            Afin de sécuriser le matériel, tout le comportement de la voiture a d'abord été modélisé sous <strong>Webots</strong>. Cette phase a permis de tester nos algorithmes d'asservissement et de détection de trajectoire avant l'implémentation sur piste réelle.
+            Avant les essais sur piste, la modélisation et la validation de l'algorithme de conduite ont été réalisées sur le simulateur <strong>Webots</strong>. Cette étape cruciale a permis d'optimiser la stratégie de navigation et les paramètres d'asservissement dans un environnement virtuel sécurisé.
         </p>
-        <img src="webots_rendu.png" alt="Simulation Webots" class="project-media">
-        <div class="image-caption">Environnement de simulation pour la validation des algorithmes de navigation.</div>
+        <img src="webbots.png" alt="Simulation Webots" class="project-media">
+        <div class="image-caption">Capture de l'environnement de simulation Webots utilisé pour le développement de la stratégie.</div>
 
-        <h2>3. Analyse Technique : LiDAR et DMA</h2>
+        <h2>3. Analyse Technique : LiDAR et Traitement des Données</h2>
         <p>
-            La gestion du flux de données du <strong>RPLIDAR S2</strong> a nécessité l'utilisation du <strong>DMA (Direct Memory Access)</strong>. Cela permet de transférer les distances mesurées directement dans la mémoire sans solliciter le processeur, garantissant une boucle de contrôle ultra-rapide.
+            Le cœur du système de perception repose sur un LiDAR balayant l'environnement à 360°. Pour traiter ce flux constant de données de manière efficace sans surcharger le processeur, nous avons implémenté une communication UART utilisant le <strong>DMA (Direct Memory Access)</strong> en mode circulaire.
         </p>
-        <img src="lidar_scan.png" alt="Scan LiDAR" class="project-media">
-        <div class="image-caption">Visualisation du nuage de points laser utilisé pour l'évitement des bordures.</div>
+        <video class="project-media" controls muted loop playsinline>
+            <source src="lidar_test.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        <div class="image-caption">Visualisation en temps réel des données mesurées par le LiDAR.</div>
 
         <h2>Conclusion & Apports du Projet</h2>
         <p>
-            Le projet COVAPSY s'est conclu par une <strong>6ème place sur 15</strong> lors de la finale à l'ENS Paris-Saclay, après avoir décroché la <strong>1ère place</strong> de notre groupe en qualifications. 
+            Le projet s'est conclu par une <strong>6ème place sur 15 équipes</strong> lors de la finale à l'ENS Paris-Saclay, avec une 1ère place obtenue dans notre groupe de qualification. Ce résultat témoigne de la fiabilité de notre architecture et de l'efficacité de nos algorithmes.
         </p>
         <p>
-            Au-delà du classement, cette expérience m'a permis de maîtriser les contraintes des <strong>systèmes embarqués temps réel</strong> et la communication industrielle. J'ai appris à optimiser le code en langage C pour des ressources limitées et à gérer la synchronisation entre capteurs et actionneurs physiques.
+            Cette expérience a été particulièrement formatrice dans la conception de <strong>systèmes embarqués temps réel</strong>. J'ai pu consolider mes compétences en programmation C sur microcontrôleurs STM32, en gestion d'interfaces de communication (UART, Bus CAN) et en intégration de capteurs complexes, tout en collaborant au sein d'une équipe projet.
         </p>
 
         <div class="footer">
