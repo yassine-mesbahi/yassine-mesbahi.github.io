@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage igus France - Yassine Mesbahi</title>
     <style>
+        /* THÈME ORANGE IGUS (#ff5f00) */
         body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
         .container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
         
@@ -20,6 +21,11 @@
         .project-media { width: 100%; border-radius: 8px; margin: 20px 0 10px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .image-caption { text-align: center; font-size: 0.95em; color: #65676b; margin-bottom: 30px; font-style: italic; }
         
+        /* GRILLE POUR LES 3 ROBOTS */
+        .robot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+        .robot-card img { width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .robot-card p { text-align: center; font-size: 0.9em; font-weight: bold; color: #333; margin-top: 8px; }
+
         .feature-grid { display: flex; flex-direction: column; gap: 20px; margin: 25px 0; }
         .feature-item { background: #f8f9fa; padding: 20px; border-radius: 8px; border-top: 4px solid #ff5f00; }
         .feature-item strong { color: #ff5f00; display: block; margin-bottom: 8px; font-size: 1.1em; }
@@ -32,51 +38,73 @@
     <div class="container">
         <a href="index.html" class="btn-back">← Retour au Portfolio</a>
         
-        <h1>Stage Ingénieur : Robotique & Low-Cost Automation</h1>
+        <h1>Stage Ingénieur : Robotique & Low-Cost Automation (LCA)</h1>
         
         <div class="tag-container">
-            <span class="tag">Robotique LCA</span>
-            <span class="tag">Interface Homme-Machine</span>
-            <span class="tag">igus ReBeL</span>
-            <span class="tag">Câblage Industriel</span>
+            <span class="tag">Robotique Industrielle</span>
+            <span class="tag">Interface Homme-Machine (IHM)</span>
+            <span class="tag">Gestion de Projets CTA</span>
+            <span class="tag">Génie Électrique</span>
         </div>
 
         <p>
-            Stage de 10 semaines réalisé chez <strong>igus France</strong> (Fresnes) au sein du département <em>Low-Cost Automation</em>. Ma mission s'est concentrée sur la simplification de l'usage des robots et la préparation de démonstrateurs technologiques.
+            Stage de 10 semaines chez <strong>igus France</strong> au sein du département <em>Low-Cost Automation</em>[cite: 1]. Ma mission portait sur le développement de solutions d'interface simplifiées et la réalisation d'études de faisabilité robotiques pour les clients[cite: 1].
         </p>
 
-        <img src="rebel_view.png" alt="Robot igus ReBeL" class="project-media">
-        <div class="image-caption">Mise en service et configuration du bras robotisé ReBeL.</div>
+        <h2>1. Maîtrise des gammes robotiques igus</h2>
+        <p>
+            J'ai travaillé sur l'intégration et la mise en service de différentes technologies de robots industriels en polymères haute performance[cite: 1]:
+        </p>
+
+        <div class="robot-grid">
+            <div class="robot-card">
+                <img src="robot_rebel.png" alt="Robot ReBeL">
+                <p>Cobot 6 axes ReBeL</p>
+            </div>
+            <div class="robot-card">
+                <img src="robot_delta.png" alt="Robot Delta">
+                <p>Robot Delta (Pick & Place)</p>
+            </div>
+            <div class="robot-card">
+                <img src="portique_3_axes.png" alt="Portique linéaire">
+                <p>Portique linéaire 3 axes</p>
+            </div>
+        </div>
+        <div class="image-caption">Les trois types de cinématiques sur lesquelles j'ai effectué des mises en service et des programmations.</div>
 
         <div class="feature-grid">
             <div class="feature-item">
-                <strong>⚡ Développement d'une Control Box (IHM Simplifiée)</strong>
-                <p>Conception d'un boîtier de commande physique pour permettre une manipulation rapide du robot sans logiciel. Intégration de 4 fonctions clés : Allumage/Extinction, Activation moteurs, Homing et Lancement du programme de démo.</p>
+                <strong>⚡ Conception de la "Control Box"</strong>
+                <p>Développement d'un boîtier de commande physique permettant de piloter les robots sans passer par l'interface logicielle PC[cite: 1]. J'ai réalisé le câblage et l'intégration des fonctions suivantes :</p>
+                <ul>
+                    <li>Allumage et extinction du robot.</li>
+                    <li>Activation et désactivation des moteurs.</li>
+                    <li>Lancement du programme de démonstration.</li>
+                    <li>Retour automatique au point zéro (Homing).</li>
+                </ul>
+                <img src="control_box.png" alt="Photo de la Control Box" class="project-media">
+                <div class="image-caption">Le boîtier fini permettant une utilisation "Plug & Play" des robots en salon ou chez le client.</div>
             </div>
 
             <div class="feature-item">
-                <strong>🤖 Préparation de CTA (Customer Technology Applications)</strong>
-                <p>Réalisation de démonstrateurs pour les salons et présentations clients. Cela incluait le montage mécanique, le câblage des capteurs/actionneurs et la programmation des trajectoires via le logiciel <strong>iRC</strong>.</p>
+                <strong>🤖 Réalisation de CTA (Customer Technology Applications)</strong>
+                <p>Le processus CTA est au cœur de la relation client chez igus[cite: 1]. À partir d'une idée soumise par un client à mon tuteur, j'étais chargé de :</p>
+                <ul>
+                    <li>Choisir le robot adapté et réaliser le montage mécanique et le câblage[cite: 1].</li>
+                    <li>Programmer les trajectoires précises via le logiciel <strong>iRC</strong>[cite: 1].</li>
+                    <li>Produire une vidéo de démonstration du cycle pour prouver au client que la solution répond parfaitement à ses attentes[cite: 1].</li>
+                </ul>
             </div>
         </div>
 
-        <h2>Démonstration en Mouvement</h2>
-        <p>Aperçu du cycle de démonstration programmé sur le robot ReBeL.</p>
-        
-        <video class="project-media" controls muted loop playsinline>
-            <source src="rebel_demo.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture de vidéos.
-        </video>
-        <div class="image-caption">Test de fluidité des trajectoires après configuration des offsets.</div>
-
         <h2>Conclusion</h2>
         <p>
-            Ce stage m'a permis d'appliquer mes compétences en <strong>GEII</strong> dans un cadre industriel concret. J'ai appris à concevoir des interfaces simplifiées pour répondre aux besoins réels des clients et à maîtriser la chaîne complète d'intégration d'un système robotique.
+            Ce stage m'a permis de comprendre comment transformer un besoin client complexe en une solution robotique concrète et facile à utiliser[cite: 1]. J'ai développé une solide expertise sur les cinématiques industrielles et sur la conception d'interfaces simplifiées[cite: 1].
         </p>
 
         <div class="footer">
-            <strong>Entreprise :</strong> igus France<br>
-            <strong>Période :</strong> Avril - Juin 2025
+            <strong>Entreprise :</strong> igus France (Fresnes)<br>
+            <strong>Période :</strong> Avril - Juin 2025 [cite: 1]
         </div>
     </div>
 
