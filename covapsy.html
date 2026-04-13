@@ -41,7 +41,7 @@
         </div>
 
         <p>
-            Le projet <strong>COVAPSY</strong> consiste à concevoir un véhicule autonome à l'échelle 1/10 capable de naviguer sur un circuit sans intervention humaine. Ce projet, réalisé pour une compétition de l'Université Paris-Saclay, met en œuvre des systèmes embarqués distribués et une communication réseau robuste.
+            Le projet <strong>COVAPSY</strong> consiste à concevoir un véhicule autonome à l'échelle 1/10 d'un véhicule réel capable de naviguer sur un circuit sans intervention humaine. Ce projet a été réalisé pour une compétition de l'Université Paris-Saclay.
         </p>
 
         <img src="voiture_complete.jpg" alt="Voiture autonome COVAPSY" class="project-media">
@@ -66,11 +66,11 @@
             </div>
         </div>
         <img src="schéma_synoptique.png" alt="Schéma synoptique de l'architecture" class="project-media">
-        <div class="image-caption">Synoptique de l'architecture électronique distribuée.</div>
+        <div class="image-caption">Synoptique de l'architecture électronique de la voiture.</div>
 
         <h2>2. Perception en Temps Réel (LiDAR)</h2>
         <p>
-            La localisation de la voiture repose sur un LiDAR à balayage laser. Les données sont extraites via <strong>UART avec DMA</strong>, permettant un traitement fluide des obstacles sans interrompre les calculs de trajectoire.
+            La localisation de la voiture repose sur un LiDAR à balayage laser. Les données sont extraites via <strong>UART utilisé en DMA</strong>, permettant un traitement fluide des obstacles sans interrompre les calculs de trajectoire.
         </p>
         <video class="project-media" controls muted loop playsinline>
             <source src="lidar_test.mp4" type="video/mp4">
@@ -80,7 +80,7 @@
 
         <h2>3. Validation en Simulation (Webots)</h2>
         <p>
-            Avant l'implémentation physique, nous avons validé l'intégralité de la stratégie de conduite sous <strong>Webots</strong>. Cette étape a permis de tester nos asservissements de direction de manière sécurisée.
+            Avant l'implémentation physique, nous avons validé l'intégralité de la stratégie de conduite sous <strong>Webots</strong>.
         </p>
         <video class="project-media" controls muted loop playsinline>
             <source src="webots.mp4" type="video/mp4">
