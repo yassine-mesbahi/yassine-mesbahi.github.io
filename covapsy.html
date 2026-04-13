@@ -54,15 +54,20 @@
         <div class="feature-grid">
             <div class="feature-item">
                 <strong>📡 Carte Comm. & Capteurs</strong>
-                Elle gère le module <strong>Bluetooth</strong>pour le contrôle du démarrage/arrêt via smartphone et traite les données des <strong>capteurs de distance arrière</strong> pour la sécurité.
+                <p><strong>Module Bluetooth :</strong> Cette unité gère la liaison sans fil avec le smartphone pour recevoir les ordres de démarrage et d'arrêt de la voiture.</p>
+                <p><strong>Capteurs Arrière :</strong> Elle traite les données des capteurs TOFSense pour détecter les obstacles et les murs situés à l'arrière, sécurisant ainsi les manoeuvres.</p>
             </div>
-            <div class="feature-item">
+           <div class="feature-item">
                 <strong>🧠 Carte Stratégie & LiDAR</strong>
-                Cette Carte analyse les distances mesurées par le <strong>LiDAR S2</strong> pour définir la trajectoire. Elle génère ensuite les commandes envoyées au hacheur pour contrôler la vitesse et le sens de rotation du moteur.
+                <p><strong>LiDAR S2 :</strong> Le microcontrôleur traite en continu le flux de données télémétriques du LiDAR pour cartographier les bordures de la piste en temps réel.</p>
+                <p><strong>Stratégie de Conduite :</strong> Sur la base des obstacles détectés, l'algorithme calcule la trajectoire optimale et transmet les consignes de vitesse et de direction via le Bus CAN.</p>
             </div>
+
             <div class="feature-item">
                 <strong>⚙️ Carte Actionneurs</strong>
-                Dédiée à la direction et l'odométrie. Elle pilote le servomoteur <strong>Herkulex</strong> pour l'angle de braquage et traite le signal de la <strong>fourche optique</strong> pour assurer le retour de vitesse.
+                <p><strong>Moteur CC & Hacheur :</strong> Cette unité reçoit les ordres du Bus CAN et pilote le hacheur pour gérer la puissance et le sens de rotation du moteur de propulsion.</p>
+                <p><strong>Servomoteur Herkulex :</strong> Elle gère le pilotage du servomoteur intelligent, garantissant un contrôle précis et réactif de l'angle de braquage.</p>
+                <p><strong>Fourche Optique :</strong> Elle traite le signal de la fourche optique montée sur l'arbre moteur pour mesurer la vitesse réelle (retour d'odométrie).</p>
             </div>
         </div>
         <img src="schéma_synoptique.png" alt="Schéma synoptique de l'architecture" class="project-media">
