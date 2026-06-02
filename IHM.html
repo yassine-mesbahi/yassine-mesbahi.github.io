@@ -38,9 +38,9 @@
         <div class="tag-container">
             <span class="tag">KiCad 7</span>
             <span class="tag">STM32F4</span>
+            <span class="tag">STM32CubeMX</span>
             <span class="tag">Écran TFT 4.3"</span>
             <span class="tag">PCB Design</span>
-            <span class="tag">Électronique</span>
         </div>
 
         <p>
@@ -74,4 +74,48 @@
 
         <h2>3. Routage du Circuit Imprimé (PCB) et Contraintes Mécaniques</h2>
         <p>
-            Le passage au routage a nécessité une gestion précise de l'espace. L'écran mesurant <strong>105,50 x 67,20 mm</strong>, ces dimensions ont dicté le "terrain de jeu" du PCB pour permettre à la carte de se cacher parfaitement derrière l'affichage, créant un
+            Le passage au routage a nécessité une gestion précise de l'espace. L'écran mesurant <strong>105,50 x 67,20 mm</strong>, ces dimensions ont dicté le "terrain de jeu" du PCB pour permettre à la carte de se cacher parfaitement derrière l'affichage, créant un bloc compact.
+        </p>
+        <div class="feature-grid">
+            <img src="connecteur_fpc.png" alt="Connecteurs FPC" class="project-media">
+            <img src="routage_pcb.png" alt="Routage KiCad" class="project-media">
+        </div>
+        <div class="image-caption">À gauche : Connecteurs CMS ZIF au pas de 0.5 mm pour les nappes FPC. À droite : Tracé des pistes respectant l'impédance et la topologie des bus à haute vitesse.</div>
+
+        <h3>Intégration Mécanique 3D</h3>
+        <p>
+            Pour la conception du futur boîtier, la cote <strong>TP VA (Touch Panel View Area)</strong> de l'écran a été extraite avec précision de la datasheet. C'est cette dimension exacte (96.24 mm) qui permet de définir la fenêtre du boîtier plastique, en incluant un dégagement pour l'adhésif double face industriel utilisé lors de l'assemblage.
+        </p>
+
+        <h2>4. Configuration Logicielle (STM32CubeMX & IDE)</h2>
+        <p>
+            La transition entre le matériel et le code s'est effectuée via la suite logicielle STMicroelectronics. L'enjeu principal a été la traduction stricte des datasheets vers la configuration bas niveau du microcontrôleur :
+        </p>
+        <ul>
+            <li><strong>Paramétrage CubeMX :</strong> Configuration précise de l'arbre d'horloge (Clock Tree) pour générer la <em>Pixel Clock</em> exigée par l'écran. Réglage des timings de synchronisation matérielle (HSYNC, VSYNC, Porches) au sein du périphérique LTDC.</li>
+            <li><strong>Optimisation matérielle :</strong> Activation de l'accélérateur graphique matériel <strong>DMA2D (Chrom-Art)</strong> pour libérer le processeur principal lors des opérations de copie de mémoire vidéo.</li>
+            <li><strong>Génération HAL (CubeIDE) :</strong> Génération du code source en C/C++ utilisant la couche d'abstraction matérielle (HAL) pour initialiser les périphériques I2C, SDIO et configurer les vecteurs d'interruptions (NVIC) du tactile.</li>
+        </ul>
+        <img src="cubemx_config.png" alt="Configuration sur STM32CubeMX" class="project-media">
+        <div class="image-caption">Paramétrage du LTDC et de l'arbre d'horloge sous STM32CubeMX pour correspondre aux exigences de l'écran Midas.</div>
+
+        <h2>Conclusion & Perspectives</h2>
+        <p>
+            La conception de cette IHM a été un formidable exercice de rigueur en ingénierie électronique et logicielle. Elle m'a permis d'appréhender le cycle complet de création d'une plateforme embarquée : de l'analyse comparative des datasheets à la validation des schémas, jusqu'aux compromis mécaniques et à la configuration bas niveau.
+        </p>
+        
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>🚀 Prochaines Étapes</strong>
+                Après la fabrication du PCB, le travail se concentrera sur la couche applicative. Le framework <strong>TouchGFX</strong> sera déployé par-dessus la configuration existante pour programmer l'interface graphique finale, animer les éléments visuels et traiter les interactions tactiles complexes.
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Projet IHM Embarquée</strong> - Yassine Mesbahi <br>
+            BUT GEII - IUT de Cachan (2025/2026)
+        </div>
+    </div>
+
+</body>
+</html>
