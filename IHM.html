@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -51,14 +50,14 @@
         <img src="vue_3d_carte_ihm.png" alt="Vue 3D de la carte IHM" class="project-media">
         <div class="image-caption">Vue 3D préliminaire du circuit imprimé intégrant la connectique de l'écran TFT.</div>
 
-        <h2>1. Étude et Choix des Composants</h2>
+        <h2>1. Conception de l'Architecture Matérielle</h2>
         <p>
-            L'une des étapes cruciales a été la migration vers un nouvel afficheur (Midas MDT0430A0ISC-RGB). Ce changement de matériel a imposé une révision complète de l'architecture électronique :
+            La conception de cette carte a nécessité l'intégration de plusieurs technologies embarquées et la résolution de contraintes matérielles spécifiques autour du microcontrôleur STM32F4 :
         </p>
         <ul>
-            <li><strong>L'écran :</strong> Disparition de l'ancien bus SPI au profit d'un bus parallèle RGB 24-bits pur, contrôlé par le périphérique <strong>LTDC</strong> du STM32.</li>
-            <li><strong>Le rétroéclairage :</strong> Le nouvel écran exigeant 32V / 20mA, l'ancien circuit d'alimentation a été remplacé par un driver LED boost <strong>TPS61165</strong>, avec recalcul de la résistance de feedback.</li>
-            <li><strong>Le tactile :</strong> Gestion via un bus I2C capacitif standard avec broches d'interruption (EXTI) dédiées.</li>
+            <li><strong>Contrôle de l'affichage (LTDC) :</strong> Implémentation d'un bus parallèle RGB 24-bits pour piloter l'écran TFT 4.3". Cette architecture m'a permis de configurer le périphérique matériel <strong>LTDC</strong> du STM32 pour garantir un rafraîchissement fluide.</li>
+            <li><strong>Électronique de Puissance :</strong> Dimensionnement d'un circuit hacheur élévateur (Boost) autour d'un driver <strong>TPS61165</strong>. J'ai réalisé les calculs de la boucle de régulation (résistance de feedback) pour l'adapter aux contraintes strictes du rétroéclairage (génération de 32V sous 20mA).</li>
+            <li><strong>Acquisition des interactions :</strong> Intégration d'un bus <strong>I2C</strong> pour la communication avec la dalle tactile capacitive, couplé à la gestion d'interruptions matérielles (<strong>EXTI</strong>) pour optimiser le temps de réponse du système.</li>
         </ul>
 
         <h2>2. Conception du Schéma Électronique (KiCad)</h2>
@@ -66,45 +65,13 @@
             Le schéma a été rigoureusement construit sur KiCad en respectant les normes industrielles et les spécifications des datasheets des fabricants (STMicroelectronics, Würth, Midas).
         </p>
         <img src="kicad_schema_stm32.png" alt="Schéma KiCad du STM32" class="project-media">
-        <div class="image-caption">Partie du schéma illustrant le câblage du STM32, incluant la correction critique des condensateurs VCAP (2.2 µF Céramique X7R) pour la stabilité du LDO interne.</div>
+        <div class="image-caption">Partie du schéma illustrant le câblage du STM32, incluant le dimensionnement critique des condensateurs VCAP (2.2 µF Céramique X7R) pour la stabilité du LDO interne.</div>
 
         <h3>Sécurisation des Périphériques</h3>
         <p>
-            Une attention particulière a été portée au câblage de la <strong>carte SD</strong> en mode SDIO. Les lignes de données (D0-D3) et de commande (CMD) ont été sécurisées par des résistances de Pull-Up, tandis que l'horloge (CLK) a été laissée pure pour garantir l'intégrité du signal haute fréquence.
+            Une attention particulière a été portée au câblage de la <strong>carte SD</strong> en mode SDIO. Les lignes de données (D0-D3) et de commande (CMD) ont été sécurisées par des résistances de Pull-Up, tandis que l'horloge (CLK) a été traitée avec soin pour garantir l'intégrité du signal haute fréquence.
         </p>
 
         <h2>3. Routage du Circuit Imprimé (PCB) et Contraintes Mécaniques</h2>
         <p>
-            Le passage au routage a nécessité une gestion précise de l'espace. L'écran mesurant <strong>105,50 x 67,20 mm</strong>, ces dimensions ont dicté le "terrain de jeu" du PCB pour permettre à la carte de se cacher parfaitement derrière l'affichage.
-        </p>
-        <div class="feature-grid">
-            <img src="connecteur_fpc.png" alt="Connecteurs FPC" class="project-media">
-            <img src="routage_pcb.png" alt="Routage KiCad" class="project-media">
-        </div>
-        <div class="image-caption">À gauche : Connecteurs CMS ZIF au pas de 0.5 mm pour les nappes FPC. À droite : Tracé des pistes respectant l'impédance du bus RGB.</div>
-
-        <h3>Intégration Mécanique 3D</h3>
-        <p>
-            Pour la conception du futur boîtier, la cote <strong>TP VA (Touch Panel View Area)</strong> de l'écran a été extraite de la datasheet. C'est cette dimension exacte (96.24 mm) qui permet de définir la fenêtre du boîtier plastique, en incluant un dégagement pour l'adhésif double face industriel.
-        </p>
-
-        <h2>Conclusion & Perspectives</h2>
-        <p>
-            La conception de cette IHM a été un formidable exercice de rigueur en ingénierie électronique. Elle m'a permis d'appréhender le cycle complet de création d'une carte : de l'analyse comparative des datasheets à la validation des schémas, jusqu'aux compromis mécaniques liés à l'intégration d'un écran tactile moderne.
-        </p>
-        
-        <div class="feature-grid">
-            <div class="feature-item">
-                <strong>🚀 Prochaines Étapes</strong>
-                Après la fabrication et le soudage du PCB (CMS), l'objectif sera d'utiliser <strong>STM32CubeIDE</strong> et le framework <strong>TouchGFX</strong> pour programmer l'interface graphique de l'automate, animer des jauges et traiter les événements tactiles en temps réel.
-            </div>
-        </div>
-
-        <div class="footer">
-            <strong>Projet IHM Embarquée</strong> - Yassine Mesbahi <br>
-            BUT GEII - IUT de Cachan (2025/2026)
-        </div>
-    </div>
-
-</body>
-</html>
+            Le passage au routage a nécessité une gestion précise de l'espace. L'écran mesurant <strong>105,50 x 67,20 mm</strong>, ces dimensions ont dicté le "terrain de jeu" du PCB pour permettre à la carte de se cacher parfaitement derrière l'affichage, créant un
