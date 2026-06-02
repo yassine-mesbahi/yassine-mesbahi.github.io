@@ -1,1 +1,110 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet IHM Embarquée - Yassine Mesbahi</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #1c1e21; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        
+        .btn-back { display: inline-block; padding: 10px 20px; background: #3b82f6; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 25px; transition: 0.3s; }
+        .btn-back:hover { background: #1e3a8a; transform: translateX(-5px); }
+        
+        h1 { color: #1e3a8a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; margin-top: 0; }
+        h2 { color: #1e3a8a; margin-top: 40px; font-size: 1.6em; border-left: 5px solid #3b82f6; padding-left: 15px; }
+        h3 { color: #1e3a8a; margin-top: 25px; font-size: 1.2em; }
+        
+        .tag-container { margin: 15px 0; }
+        .tag { background: #eef2ff; color: #4338ca; padding: 5px 12px; border-radius: 15px; font-size: 0.85em; font-weight: bold; margin-right: 5px; display: inline-block; }
+        
+        .project-media { width: 100%; border-radius: 8px; margin: 20px 0 10px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .image-caption { text-align: center; font-size: 0.95em; color: #65676b; margin-bottom: 30px; font-style: italic; }
+        
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 25px 0; }
+        .feature-item { background: #f8f9fa; padding: 20px; border-radius: 8px; border-top: 4px solid #3b82f6; }
+        .feature-item strong { color: #1e3a8a; display: block; margin-bottom: 8px; }
+
+        .footer { margin-top: 50px; padding: 20px; border-top: 1px solid #e5e7eb; font-size: 0.9em; color: #65676b; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+        
+        <h1>Conception d'une IHM Embarquée : Écran Tactile & STM32</h1>
+        
+        <div class="tag-container">
+            <span class="tag">KiCad 7</span>
+            <span class="tag">STM32F4</span>
+            <span class="tag">Écran TFT 4.3"</span>
+            <span class="tag">PCB Design</span>
+            <span class="tag">Électronique</span>
+        </div>
+
+        <p>
+            Ce projet consiste en la conception complète d'une <strong>carte électronique (PCB)</strong> servant d'Interface Homme-Machine (IHM). Architecturée autour d'un microcontrôleur <strong>STM32</strong>, la carte intègre un écran TFT 4.3" avec dalle tactile capacitive, un lecteur de carte SD et un joystick analogique. L'objectif est de fournir une plateforme robuste pour des applications industrielles ou de contrôle embarqué.
+        </p>
+
+        <img src="vue_3d_carte_ihm.png" alt="Vue 3D de la carte IHM" class="project-media">
+        <div class="image-caption">Vue 3D préliminaire du circuit imprimé intégrant la connectique de l'écran TFT.</div>
+
+        <h2>1. Étude et Choix des Composants</h2>
+        <p>
+            L'une des étapes cruciales a été la migration vers un nouvel afficheur (Midas MDT0430A0ISC-RGB). Ce changement de matériel a imposé une révision complète de l'architecture électronique :
+        </p>
+        <ul>
+            <li><strong>L'écran :</strong> Disparition de l'ancien bus SPI au profit d'un bus parallèle RGB 24-bits pur, contrôlé par le périphérique <strong>LTDC</strong> du STM32.</li>
+            <li><strong>Le rétroéclairage :</strong> Le nouvel écran exigeant 32V / 20mA, l'ancien circuit d'alimentation a été remplacé par un driver LED boost <strong>TPS61165</strong>, avec recalcul de la résistance de feedback.</li>
+            <li><strong>Le tactile :</strong> Gestion via un bus I2C capacitif standard avec broches d'interruption (EXTI) dédiées.</li>
+        </ul>
+
+        <h2>2. Conception du Schéma Électronique (KiCad)</h2>
+        <p>
+            Le schéma a été rigoureusement construit sur KiCad en respectant les normes industrielles et les spécifications des datasheets des fabricants (STMicroelectronics, Würth, Midas).
+        </p>
+        <img src="kicad_schema_stm32.png" alt="Schéma KiCad du STM32" class="project-media">
+        <div class="image-caption">Partie du schéma illustrant le câblage du STM32, incluant la correction critique des condensateurs VCAP (2.2 µF Céramique X7R) pour la stabilité du LDO interne.</div>
+
+        <h3>Sécurisation des Périphériques</h3>
+        <p>
+            Une attention particulière a été portée au câblage de la <strong>carte SD</strong> en mode SDIO. Les lignes de données (D0-D3) et de commande (CMD) ont été sécurisées par des résistances de Pull-Up, tandis que l'horloge (CLK) a été laissée pure pour garantir l'intégrité du signal haute fréquence.
+        </p>
+
+        <h2>3. Routage du Circuit Imprimé (PCB) et Contraintes Mécaniques</h2>
+        <p>
+            Le passage au routage a nécessité une gestion précise de l'espace. L'écran mesurant <strong>105,50 x 67,20 mm</strong>, ces dimensions ont dicté le "terrain de jeu" du PCB pour permettre à la carte de se cacher parfaitement derrière l'affichage.
+        </p>
+        <div class="feature-grid">
+            <img src="connecteur_fpc.png" alt="Connecteurs FPC" class="project-media">
+            <img src="routage_pcb.png" alt="Routage KiCad" class="project-media">
+        </div>
+        <div class="image-caption">À gauche : Connecteurs CMS ZIF au pas de 0.5 mm pour les nappes FPC. À droite : Tracé des pistes respectant l'impédance du bus RGB.</div>
+
+        <h3>Intégration Mécanique 3D</h3>
+        <p>
+            Pour la conception du futur boîtier, la cote <strong>TP VA (Touch Panel View Area)</strong> de l'écran a été extraite de la datasheet. C'est cette dimension exacte (96.24 mm) qui permet de définir la fenêtre du boîtier plastique, en incluant un dégagement pour l'adhésif double face industriel.
+        </p>
+
+        <h2>Conclusion & Perspectives</h2>
+        <p>
+            La conception de cette IHM a été un formidable exercice de rigueur en ingénierie électronique. Elle m'a permis d'appréhender le cycle complet de création d'une carte : de l'analyse comparative des datasheets à la validation des schémas, jusqu'aux compromis mécaniques liés à l'intégration d'un écran tactile moderne.
+        </p>
+        
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>🚀 Prochaines Étapes</strong>
+                Après la fabrication et le soudage du PCB (CMS), l'objectif sera d'utiliser <strong>STM32CubeIDE</strong> et le framework <strong>TouchGFX</strong> pour programmer l'interface graphique de l'automate, animer des jauges et traiter les événements tactiles en temps réel.
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Projet IHM Embarquée</strong> - Yassine Mesbahi <br>
+            BUT GEII - IUT de Cachan (2025/2026)
+        </div>
+    </div>
+
+</body>
+</html>
